@@ -1,0 +1,12 @@
+PDF: /workspaces/news-from-future-ai-aed4-claude/papers/zou2022_autocast_forecasting_future_world_events.pdf
+Total pages: 20
+Pages per chunk: 3
+
+Chunks:
+  zou2022_autocast_forecasting_future_world_events_chunk_001.pdf: pages 1-3
+  zou2022_autocast_forecasting_future_world_events_chunk_002.pdf: pages 4-6
+  zou2022_autocast_forecasting_future_world_events_chunk_003.pdf: pages 7-9
+  zou2022_autocast_forecasting_future_world_events_chunk_004.pdf: pages 10-12
+  zou2022_autocast_forecasting_future_world_events_chunk_005.pdf: pages 13-15
+  zou2022_autocast_forecasting_future_world_events_chunk_006.pdf: pages 16-18
+  zou2022_autocast_forecasting_future_world_events_chunk_007.pdf: pages 19-20

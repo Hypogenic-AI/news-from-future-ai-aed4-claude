@@ -1,0 +1,920 @@
+You are an academic paper writer. Generate a complete NEURIPS style paper
+based on the experiment results provided.
+
+════════════════════════════════════════════════════════════════════════════════
+                         IMPORTANT: BEFORE YOU START
+════════════════════════════════════════════════════════════════════════════════
+
+Before writing any content, you MUST complete these steps:
+
+1. READ THE SKILL: Review the paper-writer skill at templates/skills/paper-writer/SKILL.md
+2. READ THE STYLE GUIDE: Study templates/paper_writing/lab_style_guide.md carefully
+3. REVIEW EXAMPLES: Browse paper_examples/ for formatting and language patterns:
+   - Look at sections/1.introduction.tex for language style
+   - Look at tables/*.tex for table formatting
+   - Look at commands/*.tex for macro usage
+4. USE COMMAND TEMPLATES: Copy templates/paper_writing/commands/ to paper_draft/commands/
+
+CRITICAL: Reference example papers for FORMATTING and LANGUAGE STYLE only.
+Do NOT copy content, phrasing, or narrative structure from the example papers.
+The examples are in a different research domain - focus only on presentation style.
+
+════════════════════════════════════════════════════════════════════════════════
+                            EXPERIMENT REPORT
+════════════════════════════════════════════════════════════════════════════════
+
+# News from the Future: Combining LLMs with Prediction Markets for Future News Generation
+
+## 1. Executive Summary
+
+This research investigates whether combining large language models (LLMs) with prediction market data can produce plausible &#34;news from the future&#34; — articles about events that have not yet occurred but are probabilistically forecasted. We built and evaluated an end-to-end pipeline that: (1) fetches prediction market questions from Metaculus and Polymarket, (2) generates probability forecasts using GPT-4.1 with market price anchoring, and (3) produces news-style articles whose tone and hedging match the forecasted probability.
+
+**Key finding:** Market-anchored GPT-4.1 forecasts achieve a Brier score of 0.060 on the Halawi benchmark, a statistically significant 29.2% improvement over unanchored forecasts (p=0.041) and nearly matching the human crowd aggregate (0.058). Generated articles score 4.8+/5.0 across quality dimensions, with anchored articles showing significantly better uncertainty handling than unanchored ones (5.00 vs 4.48, p&lt;0.001). A working live prototype successfully generates compelling future news articles from real-time prediction market data.
+
+**Practical implication:** A &#34;News from the Future&#34; website is technically feasible with current technology. The combination of prediction markets (for calibrated probabilities) and LLMs (for narrative generation) produces articles that are plausible, well-written, and appropriately hedged.
+
+---
+
+## 2. Goal
+
+### Research Question
+Can a system that combines LLM forecasting with prediction market data generate plausible, well-calibrated news articles about future events?
+
+### Sub-hypotheses
+- **H1:** LLM forecasts anchored to prediction market prices achieve better Brier scores than unanchored LLM forecasts.
+- **H2:** Generated future news articles are rated as plausible and well-written (&gt;3.5/5 on quality dimensions).
+- **H3:** Articles generated with probability anchoring better convey appropriate uncertainty than those without.
+
+### Why This Matters
+Prediction markets represent the best available technology for aggregating probabilistic beliefs about future events, but their output — raw probabilities — is not accessible to most people. Converting forecasts into narrative form through &#34;future news articles&#34; could democratize access to probabilistic forecasting, support decision-making, and make uncertainty tangible.
+
+---
+
+## 3. Data Construction
+
+### Datasets Used
+
+| Dataset | Source | Size | Description |
+|---------|--------|------|-------------|
+| Halawi Forecasting (2024) | HuggingFace: YuehHanChen/forecasting | 914 test (317 binary) | Questions from Metaculus, GJOpen, INFER with community predictions |
+| KalshiBench v2 (2025) | HuggingFace: 2084Collective/kalshibench-v2 | 1,531 questions | CFTC-regulated Kalshi exchange questions across 16 categories |
+| Metaculus Live API | metaculus.com/api2 | 15 questions fetched | Currently open binary forecasting questions |
+| Polymarket Live API | gamma-api.polymarket.com | 15 questions fetched | Active prediction markets from high-volume events |
+
+### Dataset Characteristics
+
+**Halawi Test Set (used: 200 samples):**
+- All binary (yes/no) questions with known resolutions
+- Contains time-series community predictions (crowd median over time)
+- Topics: geopolitics, science, policy, technology
+- Resolution dates: 2023
+
+**KalshiBench (used: 200 samples):**
+- Binary questions with ground truth resolutions
+- Categories: Politics (486), Entertainment (322), Sports (269), Elections (82), Companies (79), Crypto (71), plus others
+- No market probability available in the dataset (null values)
+- Resolution dates: 2025
+
+### Example Samples
+
+**Halawi Example:**
+&gt; Question: &#34;Will Ukraine retake Polohy by the 1st of October, 2023?&#34;
+&gt; Background: Ukrainian spring counteroffensive preparations, Russian defensive fortifications...
+&gt; Community prediction (final): 9.6%
+&gt; Resolution: No (0)
+
+**KalshiBench Example:**
+&gt; Question: &#34;Will Klarna or Stripe IPO first?&#34;
+&gt; Description: &#34;If Stripe confirms an IPO first, before Jan 1, 2040...&#34;
+&gt; Category: Financials
+&gt; Ground truth: No
+
+### Data Quality
+- Missing values: 0% (all samples have questions and resolutions)
+- Community predictions available: 100% of Halawi, 0% of KalshiBench
+- All binary questions with definitive resolution
+
+---
+
+## 4. Experiment Description
+
+### Methodology
+
+#### High-Level Approach
+Three experiments test the full pipeline:
+1. **Forecasting accuracy:** Validate LLM forecasting quality (necessary precondition)
+2. **Article generation quality:** Test whether generated articles meet journalism standards
+3. **Live pipeline demo:** Demonstrate end-to-end system with real prediction market data
+
+#### Why This Method?
+We use a **retrieval-anchored prompting** approach rather than fine-tuning because:
+- It requires no training data or compute beyond API calls
+- It can be updated in real-time as market prices change
+- It matches the practical deployment scenario (a website calling APIs)
+- Literature shows market anchoring improves LLM forecasting by 17-28% (Schoenegger et al., 2024)
+
+### Implementation Details
+
+#### Tools and Libraries
+| Library | Version | Purpose |
+|---------|---------|---------|
+| Python | 3.12.8 | Runtime |
+| OpenAI | 2.18.0 | GPT-4.1 API access |
+| NumPy | 2.2.6 | Numerical computation |
+| SciPy | 1.17.0 | Statistical tests |
+| Matplotlib | 3.10.8 | Visualization |
+| Seaborn | 0.13.2 | Statistical plots |
+| Requests | 2.32.5 | API calls |
+
+#### Model
+- **GPT-4.1** (`gpt-4.1`) for all forecasting and article generation
+- Temperature: 0.1 for forecasting (deterministic), 0.7 for article generation (creative)
+- Max tokens: 20 for forecasts, 800-1000 for articles
+
+#### Hyperparameters
+| Parameter | Value | Selection Method |
+|-----------|-------|------------------|
+| Forecast temperature | 0.1 | Standard for deterministic tasks |
+| Article temperature | 0.7 | Standard for creative writing |
+| Market anchor weight | 0.6 (market) / 0.4 (LLM) | Based on Schoenegger et al. finding that market is typically better |
+| Sample size per dataset | 200 | Balance of statistical power and API cost |
+| Articles evaluated | 50 (Exp2) + 20 (Exp3) | Sufficient for paired comparison |
+| Random seed | 42 | Reproducibility |
+
+### Experimental Protocol
+
+#### Experiment 1: Forecasting Accuracy (n=400)
+For each question in the sample:
+1. **Baseline condition:** GPT-4.1 receives question + background only
+2. **Anchored condition:** GPT-4.1 also receives market/crowd probability as reference
+3. Both conditions return a single probability (0.0-1.0)
+
+Metrics: Brier score, Expected Calibration Error (ECE), bootstrap 95% CIs
+
+#### Experiment 2: Article Generation Quality (n=50)
+For 50 stratified questions (by probability range and dataset):
+1. **Anchored articles:** Generated with explicit probability level and hedging instructions
+2. **Baseline articles:** Generated without probability information
+3. Both evaluated by GPT-4.1-as-Judge on 5 dimensions (1-5 scale)
+
+Evaluation dimensions: Plausibility, Coherence, Informativeness, Uncertainty Handling, News Style
+
+#### Experiment 3: Live Pipeline (n=20)
+1. Fetch 20 questions from Metaculus and Polymarket live APIs
+2. Generate LLM forecast anchored to market price
+3. Combine forecasts (60% market + 40% LLM)
+4. Generate news article conditioned on combined probability
+5. Evaluate quality and generate HTML website output
+
+#### Reproducibility Information
+- Random seed: 42 (all stochastic processes)
+- Hardware: 4x NVIDIA RTX A6000 (GPUs not used — CPU-only API workload)
+- Total API calls: ~1,200 (400 forecasts + 200 articles + 100 evaluations + live pipeline)
+- Estimated API cost: ~$30
+- Total execution time: ~45 minutes
+
+---
+
+## 5. Results
+
+### Experiment 1: Forecasting Accuracy
+
+#### Halawi Dataset (n=200)
+
+| Method | Brier Score | 95% CI | ECE |
+|--------|-------------|--------|-----|
+| Naive (always 0.5) | 0.250 | — | — |
+| **GPT-4.1 (baseline)** | **0.084** | [0.058, 0.112] | 0.065 |
+| **GPT-4.1 (anchored)** | **0.060** | [0.042, 0.079] | 0.082 |
+| Community crowd | 0.058 | — | 0.103 |
+
+- **Improvement from anchoring: 29.2%** (Brier 0.084 → 0.060)
+- Paired t-test: t=2.058, **p=0.041** (statistically significant at α=0.05)
+- Effect size: Cohen&#39;s d = 0.146 (small)
+- Anchored GPT-4.1 **nearly matches** the human crowd aggregate (0.060 vs 0.058)
+
+#### KalshiBench (n=200)
+
+| Method | Brier Score | 95% CI | ECE |
+|--------|-------------|--------|-----|
+| Naive (always 0.5) | 0.250 | — | — |
+| **GPT-4.1 (baseline)** | **0.254** | [0.213, 0.300] | 0.190 |
+| **GPT-4.1 (CoT reasoning)** | **0.249** | [0.209, 0.292] | 0.207 |
+
+- Improvement from CoT reasoning: 2.1% (not significant, p=0.402)
+- Without market anchors, GPT-4.1 performs at near-chance level on KalshiBench
+- This confirms KalshiBench&#39;s finding that LLMs struggle without external calibration data
+
+**H1 Result: SUPPORTED** (on Halawi dataset with market anchors). Market-anchored GPT-4.1 achieves significantly better Brier scores. Without anchors (KalshiBench), performance is near-random.
+
+![Brier Score Comparison](results/plots/exp1_brier_comparison.png)
+![Calibration Curves](results/plots/exp1_calibration.png)
+
+### Experiment 2: Article Generation Quality (n=50)
+
+| Dimension | Anchored (mean±sd) | Baseline (mean±sd) | Diff | p-value |
+|-----------|--------------------|--------------------|------|---------|
+| Plausibility | 4.94 ± 0.31 | 5.00 ± 0.00 | -0.06 | 0.182 |
+| Coherence | 5.00 ± 0.00 | 5.00 ± 0.00 | 0.00 | — |
+| Informativeness | 4.28 ± 0.45 | 4.60 ± 0.49 | -0.32 | **&lt;0.001*** |
+| **Uncertainty Handling** | **5.00 ± 0.00** | **4.48 ± 0.88** | **+0.52** | **&lt;0.001*** |
+| News Style | 4.94 ± 0.24 | 4.98 ± 0.14 | -0.04 | 0.322 |
+
+Key findings:
+- **Both conditions produce very high-quality articles** (all dimensions &gt;4.0/5.0)
+- **Anchored articles significantly outperform on uncertainty handling** (d=0.77, large effect)
+- Baseline articles score slightly higher on informativeness (p&lt;0.001), likely because they write more confidently without hedging constraints
+- Plausibility, coherence, and news style are equally high in both conditions
+
+**H2 Result: STRONGLY SUPPORTED.** All dimensions exceed the 3.5/5 target threshold.
+
+**H3 Result: SUPPORTED.** Anchored articles achieve significantly better uncertainty handling (5.00 vs 4.48, p&lt;0.001, d=0.77).
+
+![Article Quality Comparison](results/plots/exp2_article_quality.png)
+![Quality by Probability Range](results/plots/exp2_quality_by_probability.png)
+
+### Experiment 3: Live Pipeline Demo (n=20)
+
+Successfully fetched and processed 20 live questions from Metaculus (15) and Polymarket (15).
+
+| Metric | Value |
+|--------|-------|
+| Questions processed | 20 |
+| Mean market probability | 30.8% |
+| Mean LLM forecast | 24.2% |
+| Mean |LLM - Market| difference | 0.087 |
+| LLM-Market correlation | **0.903** |
+| Plausibility | 5.00 ± 0.00 |
+| Coherence | 5.00 ± 0.00 |
+| Informativeness | 4.90 ± 0.30 |
+| Uncertainty Handling | 4.90 ± 0.30 |
+| News Style | 5.00 ± 0.00 |
+
+- The LLM&#39;s independent forecasts are **highly correlated** (r=0.903) with market prices
+- Mean absolute deviation is only 0.087 (8.7 percentage points)
+- All generated articles pass quality thresholds
+- HTML website output generated at `results/live_pipeline/future_times.html`
+
+**Sample Generated Article:**
+
+&gt; **Trump Unlikely to Tap Waller for Fed Chair, Forecasters Say**
+&gt;
+&gt; *June 21, 2025 – Washington, D.C.*
+&gt;
+&gt; Despite speculation surrounding key appointments in a potential second Trump administration, prediction markets and expert forecasters are nearly unanimous: Christopher Waller is not expected to receive the formal nomination for Chair of the Federal Reserve...
+
+![Live Pipeline Results](results/plots/exp3_live_pipeline.png)
+
+---
+
+## 5. Result Analysis
+
+### Key Findings
+
+1. **Market anchoring dramatically improves LLM forecasting.** With community prediction anchoring, GPT-4.1 achieves a 29.2% Brier score improvement and nearly matches the human crowd (0.060 vs 0.058). This confirms and extends Schoenegger et al.&#39;s (2024) finding of 17-28% improvement.
+
+2. **Without market anchors, LLMs struggle on real-world forecasting.** On KalshiBench (no market prices), GPT-4.1 performs at near-chance level (Brier 0.254 vs naive 0.250), consistent with the KalshiBench finding of systematic overconfidence.
+
+3. **GPT-4.1 generates high-quality news articles** about future events, scoring 4.3-5.0/5.0 across all quality dimensions in all conditions.
+
+4. **Probability anchoring specifically improves uncertainty handling.** Anchored articles score 5.00 vs 4.48 on uncertainty handling (p&lt;0.001, d=0.77), confirming that explicit probability information helps LLMs calibrate their narrative tone.
+
+5. **The live pipeline works end-to-end.** Real-time questions from Metaculus and Polymarket are successfully processed into compelling future news articles with appropriate hedging.
+
+### Hypothesis Testing Summary
+
+| Hypothesis | Result | Evidence |
+|------------|--------|----------|
+| H1: Market anchoring improves Brier scores | **Supported** | 29.2% improvement, p=0.041 |
+| H2: Articles exceed 3.5/5 quality | **Strongly supported** | All dimensions 4.28-5.00 |
+| H3: Anchoring improves uncertainty handling | **Supported** | +0.52 improvement, p&lt;0.001 |
+
+### Comparison to Literature
+
+| Metric | This work | Literature |
+|--------|-----------|------------|
+| Brier (anchored LLM) | 0.060 | 0.101 (GPT-4.5, ForecastBench 2024) |
+| Brier (crowd baseline) | 0.058 | 0.081 (superforecasters, ForecastBench) |
+| Anchoring improvement | 29.2% | 17-28% (Schoenegger et al., 2024) |
+| LLM-Market correlation | 0.903 | Not reported |
+
+Our anchoring improvement (29.2%) slightly exceeds the 17-28% range found by Schoenegger et al. (2024), likely because GPT-4.1 is more capable than the GPT-4 and Claude 2 models they tested.
+
+### Limitations
+
+1. **LLM-as-Judge bias.** Using GPT-4.1 to evaluate articles generated by GPT-4.1 introduces self-evaluation bias. The near-ceiling scores (4.8-5.0) likely reflect this. Human evaluation would provide more discriminating assessments.
+
+2. **Sample size.** 200 questions per dataset and 50 articles provide moderate statistical power. Larger samples would narrow confidence intervals.
+
+3. **Single model.** We only tested GPT-4.1. Multi-model comparison (Claude, Gemini) would strengthen generalizability claims.
+
+4. **No temporal validation.** We evaluate on historical questions with known resolutions. True &#34;future&#34; validation would require prospective evaluation over time.
+
+5. **Ethical concerns.** Plausible future news could be misused for market manipulation or misinformation. Any deployment should include prominent disclaimers.
+
+6. **Evaluation ceiling effect.** Most quality scores cluster at 4.5-5.0, making it difficult to distinguish quality differences. A more granular rubric or adversarial evaluation would be more informative.
+
+---
+
+## 6. Conclusions
+
+### Summary
+A &#34;News from the Future&#34; system combining LLMs with prediction market data is **technically feasible and produces high-quality output**. Market-anchored GPT-4.1 nearly matches human crowd forecasting accuracy, and generated articles are plausible, well-written, and appropriately hedged. The key insight is that prediction markets provide the calibrated probabilities that LLMs lack on their own, while LLMs provide the narrative generation capability that prediction markets lack.
+
+### Implications
+
+**Practical:** A production website could be built today using this pipeline. The main components — prediction market APIs, LLM APIs, and HTML generation — are all readily available. The critical design decision is the anchoring mechanism: LLMs should not forecast independently but should use market prices as primary input.
+
+**Theoretical:** This work bridges two previously separate research areas (LLM forecasting and temporal text generation) and demonstrates that their combination is synergistic — each compensates for the other&#39;s weakness.
+
+### Confidence in Findings
+- **High confidence** in the forecasting improvement from market anchoring (statistically significant, consistent with prior literature)
+- **Moderate confidence** in article quality scores (limited by LLM-as-Judge bias)
+- **High confidence** in the technical feasibility of the pipeline (demonstrated with live APIs)
+
+---
+
+## 7. Next Steps
+
+### Immediate Follow-ups
+1. **Human evaluation study:** Recruit annotators to evaluate articles and compare with LLM-as-Judge scores
+2. **Multi-model comparison:** Test Claude Sonnet 4.5, Gemini 2.5 Pro, and GPT-5 for both forecasting and generation
+3. **Prospective validation:** Deploy the system and track forecast accuracy over time against actual outcomes
+
+### Alternative Approaches
+- Fine-tuning a smaller model specifically for future news generation
+- Using Foresight Learning (Turtel et al., 2026) to train a forecasting model on resolved market data
+- Multi-agent pipeline where separate models handle forecasting, writing, and editing
+
+### Broader Extensions
+- **Video/audio generation:** Convert articles to AI news anchor presentations
+- **Personalization:** Generate future news tailored to user interests or geographic regions
+- **Portfolio of scenarios:** Generate articles for different probability outcomes (what if yes? what if no?)
+- **Automated fact-checking:** Cross-reference generated claims with FActScore to flag unsupported assertions
+
+### Open Questions
+- How do readers perceive AI-generated future news vs. human forecaster commentary?
+- What is the optimal probability threshold for generating &#34;future news&#34; vs. &#34;uncertainty reports&#34;?
+- How should a future news system handle low-probability, high-impact events (tail risks)?
+- What ethical safeguards are needed for a public-facing future news website?
+
+---
+
+## References
+
+1. Halawi, D., Zhang, F., Yueh-Han, C., &amp; Steinhardt, J. (2024). Approaching Human-Level Forecasting with Language Models. NeurIPS 2024.
+2. Zou, A. et al. (2022). Forecasting Future World Events with Neural Networks. NeurIPS 2022 D&amp;B.
+3. Smith, L.N. (2025). Do Large Language Models Know What They Don&#39;t Know? KalshiBench. NeurIPS 2024.
+4. Jain, C. &amp; Flanigan, J. (2024). Future Language Modeling from Temporal Document History. ICLR 2024.
+5. Schoenegger, P. et al. (2024). Wisdom of the Silicon Crowd. Journal of Experimental Psychology: General.
+6. Turtel, B. et al. (2026). Future-as-Label: Scalable Supervision from Real-World Outcomes. arXiv.
+7. Shahabi, S. et al. (2026). TruthTensor: Evaluating LLMs through Human Imitation on Prediction Market. arXiv.
+8. Karger, E. et al. (2024). ForecastBench: A Dynamic Benchmark of AI Forecasting. ICLR 2025.
+9. Zheng, L. et al. (2023). Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. arXiv.
+10. Huertas, P. et al. (2024). News Generation with LLMs. arXiv.
+
+---
+
+## Appendix: File Structure
+
+```
+/workspaces/news-from-future-ai-aed4-claude/
+├── REPORT.md                    # This report
+├── README.md                    # Project overview
+├── planning.md                  # Research plan
+├── literature_review.md         # Literature review
+├── resources.md                 # Resource catalog
+├── pyproject.toml               # Dependencies
+├── src/
+│   ├── experiment1_forecasting.py        # Forecasting accuracy experiment
+│   ├── experiment2_article_generation.py # Article quality experiment
+│   ├── experiment3_live_pipeline.py      # Live pipeline demo
+│   ├── analysis.py                       # Statistical analysis &amp; plots
+│   └── run_all.py                        # Main runner
+├── results/
+│   ├── forecasts/                        # Experiment 1 results
+│   ├── articles/                         # Experiment 2 results
+│   ├── live_pipeline/                    # Experiment 3 results + HTML
+│   │   └── future_times.html             # Generated website
+│   └── plots/                            # All visualizations
+├── datasets/                             # Downloaded datasets
+├── papers/                               # Downloaded papers (23)
+└── code/                                 # Cloned repositories (10)
+```
+
+
+════════════════════════════════════════════════════════════════════════════════
+                            RESEARCH PLAN
+════════════════════════════════════════════════════════════════════════════════
+
+# Research Plan: News from the Future
+
+## Motivation &amp; Novelty Assessment
+
+### Why This Research Matters
+People want to understand what the future holds. Prediction markets aggregate human beliefs into calibrated probabilities, and LLMs can generate fluent text — but no one has systematically studied the pipeline of combining these two capabilities to produce plausible &#34;future news articles.&#34; Such a system could serve as a decision-support tool, scenario planning aid, or public information service that makes probabilistic forecasts tangible and accessible to non-experts.
+
+### Gap in Existing Work
+The literature reveals two disjoint research threads: (1) LLM forecasting accuracy (Halawi et al., Schoenegger et al., KalshiBench) and (2) temporal/future text generation (Jain &amp; Flanigan). No published work has connected them into an end-to-end pipeline that takes prediction market questions, generates probability-informed forecasts, and produces news-style articles about likely future outcomes. Additionally, while text quality of LLM-generated news is well-studied, the **conditional plausibility** — whether generated future news properly reflects prediction market probabilities — has not been evaluated.
+
+### Our Novel Contribution
+We build and evaluate an end-to-end &#34;News from the Future&#34; prototype that:
+1. Fetches real prediction market questions (from Metaculus and Polymarket APIs)
+2. Uses GPT-4.1 to generate probability estimates (with and without market price anchoring)
+3. Generates news-style articles conditioned on predicted outcomes
+4. Evaluates the system on three dimensions: **forecasting accuracy** (Brier score vs. market/crowd), **article quality** (coherence, style, factual grounding via LLM-as-Judge), and **probability-article alignment** (whether articles appropriately convey uncertainty)
+
+### Experiment Justification
+- **Experiment 1 (Forecasting):** We must first validate that LLM forecasts are reasonable before using them to generate news. We test GPT-4.1 on the Halawi forecasting dataset (914 test questions) and KalshiBench (1,531 questions), comparing against crowd/market baselines.
+- **Experiment 2 (Article Generation):** Given forecasted outcomes, we generate future news articles and evaluate their quality. This tests whether LLMs can produce plausible, well-calibrated future narratives.
+- **Experiment 3 (End-to-End Pipeline):** We fetch LIVE prediction market questions, run the full pipeline, and evaluate the complete system with LLM-as-Judge evaluation. This is the core contribution — demonstrating a working prototype.
+
+---
+
+## Research Question
+Can a system that combines LLM forecasting with prediction market data generate plausible, well-calibrated news articles about future events? Specifically:
+1. How accurate are LLM forecasts when anchored to prediction market probabilities?
+2. What is the quality of generated &#34;future news&#34; articles?
+3. Does probability anchoring improve article plausibility and calibration?
+
+## Hypothesis Decomposition
+- **H1:** LLM forecasts anchored to prediction market prices achieve better Brier scores than unanchored LLM forecasts.
+- **H2:** Generated future news articles are rated as plausible and well-written by LLM-as-Judge evaluation (&gt;3.5/5 on quality dimensions).
+- **H3:** Articles generated with probability anchoring better convey appropriate uncertainty than those without.
+
+## Proposed Methodology
+
+### Approach
+Three-stage pipeline evaluated on existing benchmarks and live prediction market data:
+1. **Forecasting Module**: Prompt GPT-4.1 with prediction market questions, with/without market price context
+2. **Article Generation Module**: Given a question and forecasted probability, generate a news article as if the event has occurred (for high-prob events) or discussing the outlook (for uncertain events)
+3. **Evaluation**: Brier score for forecasting, LLM-as-Judge for article quality
+
+### Experimental Steps
+
+#### Experiment 1: Forecasting Accuracy
+1. Load Halawi forecasting test set (914 questions) and KalshiBench (1,531 questions)
+2. For each question, prompt GPT-4.1 in two conditions:
+   - **Baseline (no anchor):** Question + background only
+   - **Market-anchored:** Question + background + community/market probability
+3. Collect predicted probabilities, compute Brier scores
+4. Compare against crowd/market baselines
+
+#### Experiment 2: Article Generation Quality
+1. Select 50 diverse questions from the datasets (stratified by category/probability range)
+2. Generate future news articles in two conditions:
+   - **Unanchored:** Generate based on LLM&#39;s own forecast
+   - **Anchored:** Generate based on market probability
+3. Evaluate via GPT-4.1-as-Judge on 5 dimensions: plausibility, coherence, informativeness, appropriate hedging, news style
+
+#### Experiment 3: Live Pipeline Demo
+1. Fetch 20 current prediction market questions from Metaculus/Polymarket APIs
+2. Run full pipeline: forecast → article generation
+3. Evaluate with LLM-as-Judge
+4. Create a simple web-ready output (HTML/JSON)
+
+### Baselines
+- **Forecasting:** Community prediction median (Halawi dataset), market probability (KalshiBench), naive base rate (0.5)
+- **Article quality:** Direct generation without any forecasting context (just &#34;write news about X&#34;)
+
+### Evaluation Metrics
+1. **Brier Score** = mean((p - y)²) — lower is better
+2. **Expected Calibration Error (ECE)** — binned calibration
+3. **LLM-as-Judge scores** (1-5 scale) for: Plausibility, Coherence, Informativeness, Uncertainty Handling, News Style
+4. **Probability-Article Alignment** — whether the article&#39;s tone matches the probability (confident for p&gt;0.8, hedged for 0.3&lt;p&lt;0.7)
+
+### Statistical Analysis Plan
+- Paired t-tests or Wilcoxon signed-rank tests for Brier score comparisons (anchored vs unanchored)
+- Bootstrap confidence intervals for all metrics
+- Effect sizes (Cohen&#39;s d)
+- Significance level: α = 0.05
+
+## Expected Outcomes
+- H1: Market anchoring should improve Brier scores by 15-25% (based on Schoenegger et al. finding of 17-28% improvement)
+- H2: Article quality should exceed 3.5/5 on most dimensions
+- H3: Anchored articles should show significantly better uncertainty handling
+
+## Timeline and Milestones
+1. Environment setup + data loading: 10 min
+2. Forecasting experiment implementation: 30 min
+3. Run forecasting experiment (API calls): 30 min
+4. Article generation implementation: 20 min
+5. Run article generation: 20 min
+6. Live pipeline demo: 20 min
+7. Analysis and visualization: 30 min
+8. Documentation: 30 min
+
+## Potential Challenges
+- **API rate limits:** Batch requests, cache responses, use subset if needed
+- **Cost:** ~914 + 1531 + 50*2 + 20 ≈ 2,500 API calls. At ~$0.01/call ≈ $25 total
+- **Live API availability:** Metaculus/Polymarket APIs may have rate limits; cache responses
+- **Evaluation subjectivity:** LLM-as-Judge has known biases; report inter-rater agreement
+
+## Success Criteria
+1. Complete end-to-end pipeline producing future news articles
+2. Statistically significant improvement from market anchoring on forecasting
+3. Article quality rated &gt;3.5/5 on average across dimensions
+4. Reproducible results with documented code
+
+
+════════════════════════════════════════════════════════════════════════════════
+                          LITERATURE REVIEW
+════════════════════════════════════════════════════════════════════════════════
+
+# Literature Review: News from the Future
+
+**Research Topic:** A website that combines large language models (LLMs) with prediction markets can generate plausible news articles about future events.
+
+**Domain:** Artificial Intelligence
+
+**Date:** 2026-02-10
+
+---
+
+## 1. Introduction
+
+This literature review examines the intersection of three research areas: (1) LLM-based forecasting of future events, (2) prediction markets as probability aggregation mechanisms, and (3) automated generation of plausible future-oriented text. The hypothesis under investigation is that combining LLMs with prediction market data can produce plausible news articles about events that have not yet occurred. We organize the review into four thematic sections covering forecasting benchmarks and methods, prediction market integration, temporal text generation, and evaluation methodologies.
+
+---
+
+## 2. LLM-Based Forecasting of Future Events
+
+### 2.1 Foundational Benchmarks
+
+The AutoCast benchmark (Zou et al., 2022) established the first large-scale dataset for evaluating ML models on real-world forecasting questions. It contains 6,707 questions from Metaculus, Good Judgment Open, and CSET Foretell, alongside a 200GB+ news corpus from CommonCrawl organized by publication date. The temporal train/test split (cutoff: May 2021) prevents information leakage. Key findings include that retrieval-augmented models (FiD Static, FiD Temporal) substantially outperform non-retrieval baselines, but even the best model (65.4% T/F accuracy) remains far below human crowd performance (92.4%). The paper introduced the critical methodological principle of date-organized corpora for preventing future information leakage in retrodiction experiments.
+
+ForecastBench (Karger et al., 2024; ICLR 2025) advances this with a dynamic, contamination-free benchmark that generates 1,000 new questions every two weeks from 9 sources including prediction markets (Manifold, Metaculus, Polymarket) and time-series data (ACLED, FRED, Yahoo Finance). Questions span 7- to 180-day forecast horizons. As of early 2026, GPT-4.5 achieves a Brier score of 0.101 versus superforecasters&#39; 0.081, with model-human parity projected for late 2026.
+
+PROPHET (Sun et al., 2025) introduces a Polymarket-derived benchmark with 4,631 binary questions filtered using a novel Causal Intervened Likelihood (CIL) metric to assess question inferability. The CIL framework addresses a fundamental limitation of earlier benchmarks: many questions may be inherently unpredictable (e.g., &#34;Will a specific coin flip come up heads?&#34;), making Brier score comparisons misleading without controlling for question difficulty.
+
+KalshiBench (Smith, 2025; NeurIPS 2024) provides 1,531 questions from the CFTC-regulated Kalshi exchange, temporally filtered to post-training-cutoff dates. The most striking finding is systematic overconfidence: at the 90%+ confidence level, models are wrong 15-62% of the time (GPT-5.2-XHigh achieves only 33.7% accuracy on predictions where it reports 95.9% confidence). Only Claude Opus 4.5 achieves a positive Brier Skill Score (+0.057); all other models perform worse than always predicting the base rate.
+
+### 2.2 Approaching and Exceeding Baselines
+
+Halawi et al. (2024; NeurIPS 2024) demonstrate the most successful LLM forecasting system to date. Their retrieval-augmented pipeline—comprising search query generation, article relevancy filtering, summarization, reasoning with initial prediction, and forecast aggregation—achieves a Brier score competitive with human crowd aggregates across 5 forecasting platforms. The system retrieves up to 15 articles per question, uses GPT-4-1106 for reasoning, and aggregates via trimmed mean across multiple prompt variations. In a &#34;selective&#34; setting where the model forecasts only on questions where it has sufficient information, it surpasses the human crowd.
+
+The OpenForesight project (Nakano et al., 2025) takes a different approach, synthesizing ~50,000 open-ended forecasting questions from news articles and training OpenForecaster8B via Group Relative Policy Optimization (GRPO). This addresses the bottleneck of manually created forecasting questions by automating question generation from current events.
+
+### 2.3 Ensemble and Calibration Methods
+
+Schoenegger et al. (2024) demonstrate that a &#34;wisdom of the silicon crowd&#34;—the median of 12 diverse LLMs—achieves a Brier score of 0.20, statistically equivalent to a human crowd&#39;s 0.19 on 31 Metaculus questions. This suggests that naive ensemble aggregation of LLM predictions can substitute for human forecasting crowds, at least at the aggregate level. However, individual models show poor calibration and a systematic acquiescence bias (averaging 57.35% probability on questions where only 45% resolved positively).
+
+Turtel et al. (2026) introduce &#34;Foresight Learning,&#34; extending reinforcement learning with verifiable rewards (RLVR) to temporally delayed outcomes. By using proper scoring rules (log score) as rewards computed after real-world event resolution, they train Qwen3-32B to achieve a 27% improvement in Brier score and halve calibration error (ECE) relative to the base model. Remarkably, the 32B Foresight model outperforms the 7x larger Qwen3-235B on all forecasting metrics. Their core insight—&#34;time creates free supervision&#34;—is directly applicable to any system that can continuously collect prediction market resolutions as training labels.
+
+---
+
+## 3. Prediction Markets as Probability Sources
+
+### 3.1 Market Mechanisms and Data
+
+Prediction markets aggregate beliefs through financial incentives, producing probability estimates for future events. The major platforms include:
+
+- **Metaculus** (crowd median/mean, non-monetary): The most widely used platform in academic research, with 10,000+ questions and rich metadata including crowd forecast time series.
+- **Polymarket** (real-money, blockchain-based): Offers large-scale binary markets with high liquidity. The SII-WANGZJ dataset provides 1.1 billion trading records across 268,000+ markets.
+- **Kalshi** (CFTC-regulated, real-money): Provides legally binding resolution criteria and verifiable ground truth. KalshiBench demonstrates its utility for LLM evaluation.
+- **Manifold** (play-money): High question diversity with accessible API, though lower stake alignment.
+- **Good Judgment Open/Project**: Gold-standard geopolitical forecasting with superforecaster benchmarks; IARPA ACE data available on Harvard Dataverse.
+
+### 3.2 LLMs as Prediction Market Agents
+
+TruthTensor (Shahabi et al., 2026) evaluates LLMs as live Polymarket agents using a four-layer architecture: instruction locking, baseline construction from market prices, agent deployment with drift tracking, and market-linked execution. Across 876,567 forecasting decisions over 30 days, all 8 frontier models had negative P&amp;L (losses ranging from $2.6M to $14.3M), indicating that no model consistently beats the market. The paper introduces a Holistic Human Imitation Score (HHIS) that weights correctness (0.2), calibration (0.2), stability/drift (0.3), risk assessment (0.15), and reasoning quality (0.15).
+
+Choi et al. (2024) examine LLMs as prediction market agents from a behavioral perspective, though the specific mechanisms differ from TruthTensor&#39;s live trading approach.
+
+### 3.3 Market Prices as Ground Truth and Training Signal
+
+A key insight across the literature is that prediction market prices serve dual roles: as **inputs** to LLM forecasting (providing calibrated human probability estimates) and as **training labels** (through market resolution). Schoenegger et al. (2024) show that exposing GPT-4 and Claude 2 to human crowd medians improves their Brier scores by 17-28%, though naive averaging of human and LLM forecasts outperforms LLM-mediated updating. Turtel et al. (2026) formalize this into a training pipeline where every market resolution becomes a reinforcement learning reward signal.
+
+---
+
+## 4. Temporal Text Generation and Future Language Modeling
+
+### 4.1 Future Language Modeling
+
+Jain &amp; Flanigan (2024; ICLR 2024) formalize the task of &#34;future language modeling&#34;—generating text that plausibly could appear in the future, conditioned on a temporal history of document collections. Their doubly contextualized model adds temporal bias terms to a GPT-2 softmax, tracking word frequency trends via LSTM and using a gating mechanism to control when temporal signals override standard language model predictions. On ACL Anthology abstracts (2003-2021), their model achieves 63% average quality on human evaluation versus 46% for non-temporal baselines, generating content that reflects emerging research trends rather than outdated topics. The key architectural insight—temporal trend bias with contextual gating—is domain-agnostic and the authors explicitly note applicability to news corpora.
+
+### 4.2 News Article Generation
+
+Huertas et al. (2024) survey automated news generation techniques including template-based, extractive, and neural approaches. The shift toward LLM-based generation has made it possible to produce articles that are increasingly difficult to distinguish from human-written news, raising both opportunities for the &#34;news from the future&#34; concept and concerns about misinformation.
+
+### 4.3 Controllable Generation for Future News
+
+The generation of plausible future news requires controlling for multiple attributes simultaneously: topic alignment with forecasted events, appropriate uncertainty framing, temporal consistency, and stylistic fidelity to real news. Controllable text generation techniques (surveyed in the IAAR-Shanghai CTGSurvey) provide the methodological toolkit, including training-stage approaches (RLHF, fine-tuning with attribute classifiers) and inference-stage approaches (constrained decoding, prompt engineering, language model arithmetic).
+
+---
+
+## 5. Evaluation Methodologies
+
+### 5.1 Forecasting Accuracy
+
+The standard metric is the **Brier score**: BS = (1/N) Σ(pᵢ - yᵢ)², where pᵢ is the predicted probability and yᵢ ∈ {0,1} is the outcome. Perfect predictions score 0; uninformed predictions score 0.25. Human superforecasters typically achieve 0.15-0.20. Complementary metrics include:
+
+- **Expected Calibration Error (ECE)**: Measures whether stated confidences match actual accuracy across binned predictions.
+- **Brier Skill Score (BSS)**: Improvement over a climatological baseline; BSS = 1 - (BS/BS_base).
+- **Log score**: A strictly proper scoring rule used in Foresight Learning (Turtel et al., 2026).
+- **Overconfidence Rate (OCR@τ)**: Fraction of incorrect predictions among those above confidence threshold τ.
+
+### 5.2 Text Quality and Plausibility
+
+For evaluating generated future news articles, relevant metrics include:
+
+- **Perplexity / Content Perplexity**: Jain &amp; Flanigan (2024) introduce content perplexity (CPL), measuring fluency specifically over content words rather than function words.
+- **Content Meteor**: Maximum METEOR match between generated and real future documents, measuring topical alignment.
+- **FActScore** (Min et al., 2023): Decomposes generated text into atomic facts and verifies each against a knowledge source, providing fine-grained factual precision scores.
+- **GRUEN** (Zhu et al., 2020): Evaluates linguistic quality across four dimensions.
+- **Human evaluation**: Jain &amp; Flanigan use 6 criteria (topic/problem/method correctness and novelty); Schoenegger et al. use calibration-based assessments; KalshiBench uses reliability diagrams.
+
+### 5.3 Calibration Assessment
+
+Calibration—whether a model&#39;s stated probability matches its empirical accuracy—is a critical but distinct capability from raw forecasting accuracy. KalshiBench demonstrates that calibration error varies by 3x across models with similar accuracy (ECE ranging from 0.120 to 0.395). Extended reasoning (more tokens) may actually hurt calibration (GPT-5.2-XHigh shows the worst calibration despite comparable accuracy). Post-hoc calibration methods (temperature scaling, Platt scaling) appear necessary before using LLM probabilities for decision-making or news generation.
+
+---
+
+## 6. Synthesis: Toward a &#34;News from the Future&#34; System
+
+The literature converges on a feasible architecture for generating plausible future news articles:
+
+1. **Probability estimation**: Use retrieval-augmented LLM forecasting (Halawi et al., 2024) enhanced with prediction market prices as both context and calibration anchors (Schoenegger et al., 2024). Train the forecasting model using Foresight Learning (Turtel et al., 2026) to continuously improve calibration from market resolutions.
+
+2. **Topic selection and framing**: Use prediction market questions as structured prompts defining the event space. Filter by CIL (Sun et al., 2025) to focus on events with sufficient informational basis for meaningful prediction.
+
+3. **Article generation**: Apply temporal language modeling techniques (Jain &amp; Flanigan, 2024) to inject trend awareness into a news-specialized LLM, using controllable generation to maintain stylistic fidelity and appropriate uncertainty framing.
+
+4. **Evaluation**: Assess forecasting accuracy via Brier score against market/crowd baselines; assess text quality via FActScore, content perplexity, and human evaluation of plausibility, coherence, and appropriate hedging.
+
+### Key Open Challenges
+
+- **Tail events**: Forecasting tools are unsuitable for black swan events (Zou et al., 2022, citing Taleb). Generated future news will systematically underweight low-probability, high-impact scenarios.
+- **Overconfidence**: All current LLMs exhibit systematic overconfidence (KalshiBench), requiring careful calibration before using probabilities to weight generated narratives.
+- **Novel entities**: Future news will contain people, organizations, and concepts that don&#39;t exist in training data. Current approaches can extrapolate trends but cannot predict genuinely novel elements.
+- **Ethical considerations**: Plausible future news articles could be misused for market manipulation, misinformation, or inducing inappropriate certainty about uncertain outcomes. The AutoCast X-Risk Sheet explicitly warns about automation bias and false precision.
+- **Temporal granularity**: Most benchmarks operate on weeks-to-months horizons, while compelling news articles often concern next-day or next-week events, requiring higher temporal resolution.
+
+---
+
+## 7. Key References
+
+### Core Papers (Deep-Read)
+
+1. **Halawi, D., Zhang, F., Yueh-Han, C., &amp; Steinhardt, J. (2024).** Approaching Human-Level Forecasting with Language Models. *NeurIPS 2024*. arXiv:2402.18563.
+2. **Zou, A., Xiao, C., Jia, R., Kwon, J., Mazeika, M., Li, R., Song, D., Steinhardt, J., Evans, O., &amp; Hendrycks, D. (2022).** Forecasting Future World Events with Neural Networks. *NeurIPS 2022 Datasets and Benchmarks*. arXiv:2206.15474.
+3. **Smith, L.N. (2025).** Do Large Language Models Know What They Don&#39;t Know? Evaluating Epistemic Calibration via Prediction Markets (KalshiBench). *NeurIPS 2024*. arXiv:2512.16030.
+4. **Jain, C. &amp; Flanigan, J. (2024).** Future Language Modeling from Temporal Document History. *ICLR 2024*. arXiv:2404.10297.
+5. **Shahabi, S., Graham, S., &amp; Isah, H. (2026).** TruthTensor: Evaluating LLMs through Human Imitation on Prediction Market. arXiv:2601.13545.
+6. **Schoenegger, P. et al. (2024).** Wisdom of the Silicon Crowd: LLM Ensemble Prediction Capabilities Rival Human Crowd Accuracy. *Journal of Experimental Psychology: General*.
+7. **Turtel, B., Wilczewski, P., Franklin, D., &amp; Skothiem, K. (2026).** Future-as-Label: Scalable Supervision from Real-World Outcomes. arXiv:2601.06336.
+
+### Supporting Papers
+
+8. **Karger, E. et al. (2024).** ForecastBench: A Dynamic Benchmark of AI Forecasting Capabilities. *ICLR 2025*. arXiv:2409.19839.
+9. **Sun, Z. et al. (2025).** PROPHET: Prompting LLMs for Future Forecasting. arXiv:2501.xxxxx.
+10. **Nakano, R. et al. (2025).** Scaling Open-Ended Reasoning: OpenForesight. arXiv:2505.xxxxx.
+11. **Schoenegger, P. et al. (2023).** Large Language Models in Forecasting Tournaments. arXiv:2310.xxxxx.
+12. **Halawi, D. et al. (2023).** Forecasting with LLMs (earlier version). arXiv:2310.xxxxx.
+13. **Xia, C. et al. (2023).** AutoCast++. arXiv:2310.xxxxx.
+14. **Zhang, Y. et al. (2024).** Can Language Models Use Forecasting Strategies? arXiv:2406.xxxxx.
+15. **Stanton, S. et al. (2025).** Outcome-Based RL to Predict the Future. arXiv:2502.xxxxx.
+16. **Kang, J. et al. (2025).** Bench to the Future: Pastcasting. arXiv:2502.xxxxx.
+17. **Navarro, D. et al. (2025).** Navigating Tomorrow. arXiv:2501.xxxxx.
+18. **Marois, A. et al. (2024).** Consistency Checks for Forecasters. arXiv:2406.xxxxx.
+19. **Teal, J. et al. (2025).** Pitfalls of Evaluating LLM Forecasters. arXiv:2502.xxxxx.
+20. **Huertas, P. et al. (2024).** News Generation with LLMs. arXiv:2404.xxxxx.
+21. **Wang, Y. et al. (2023).** Survey on Factuality in LLMs. arXiv:2310.xxxxx.
+22. **Zheng, L. et al. (2023).** Judging LLM-as-a-Judge. arXiv:2306.xxxxx.
+23. **Choi, S. et al. (2024).** LLMs as Prediction Market Agents. arXiv:2411.xxxxx.
+
+
+════════════════════════════════════════════════════════════════════════════════
+                          PAPER REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+Generate a complete academic paper with the following structure:
+
+1. TITLE
+   - Clear, specific, informative
+   - Should convey main finding or contribution
+
+2. ABSTRACT (150-250 words)
+   - Problem statement
+   - Approach
+   - Key results
+   - Significance
+
+3. INTRODUCTION
+   - Research problem and motivation
+   - Gap in existing work
+   - Our contribution (be specific)
+   - Paper organization
+
+4. RELATED WORK
+   - Organized by theme/approach
+   - Position our work relative to prior work
+   - Cite papers from literature review
+
+5. METHODOLOGY
+   - Clear description of approach
+   - Experimental setup
+   - Datasets used
+   - Evaluation metrics
+   - Baselines
+
+6. RESULTS
+   - Present results with tables and figures
+   - Statistical analysis
+   - Comparison to baselines
+   - Ablation studies (if applicable)
+
+7. DISCUSSION
+   - Interpretation of results
+   - Limitations
+   - Broader implications
+
+8. CONCLUSION
+   - Summary of contributions
+   - Key findings
+   - Future work
+
+9. REFERENCES
+   - BibTeX format
+   - All cited papers
+
+════════════════════════════════════════════════════════════════════════════════
+                          OUTPUT FORMAT
+════════════════════════════════════════════════════════════════════════════════
+
+Create a MODULAR LaTeX project with the following directory structure:
+
+paper_draft/
+├── main.tex              # Main file that imports all sections
+├── references.bib        # BibTeX references
+├── sections/
+│   ├── abstract.tex      # Abstract content
+│   ├── introduction.tex  # Introduction section
+│   ├── related_work.tex  # Related work section
+│   ├── methodology.tex   # Methodology section
+│   ├── results.tex       # Results section
+│   ├── discussion.tex    # Discussion section
+│   └── conclusion.tex    # Conclusion section
+├── figures/              # Directory for any generated figures
+├── tables/               # Directory for complex standalone tables
+└── appendix/             # Directory for appendix sections (if needed)
+
+INSTRUCTIONS:
+1. First, create the directory structure above (mkdir -p paper_draft/sections paper_draft/figures paper_draft/tables paper_draft/appendix)
+2. Write main.tex using the EXACT preamble for NEURIPS:
+
+   \documentclass{article}
+   \usepackage[final]{neurips_2025}  % NEURIPS style (neurips_2025.sty is in paper_draft/)
+   \usepackage[hidelinks]{hyperref}  % REQUIRED: clickable links
+   \usepackage{booktabs}  % REQUIRED: professional tables
+   \usepackage{graphicx}
+   \usepackage{amsmath,amssymb}
+
+   % Import command files
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+   % Use this bibliography style:
+   \bibliographystyle{plainnat}
+
+   - Use \input{sections/...} to include each section
+   - Use \bibliography{references} for references
+3. Write each section file with COMPLETE content (no placeholders)
+4. Each section file should include its \section{} command
+5. Write references.bib with all citations in BibTeX format
+6. After writing all files, compile the paper:
+   cd paper_draft && pdflatex -interaction=nonstopmode main.tex && bibtex main && pdflatex -interaction=nonstopmode main.tex && pdflatex -interaction=nonstopmode main.tex
+
+This modular structure allows humans to easily:
+- Edit individual sections without navigating a large file
+- Track changes per section
+- Reuse sections across different paper versions
+
+════════════════════════════════════════════════════════════════════════════════
+                          QUALITY REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+- Academic tone throughout
+- All claims must be supported by data from the experiment report
+- Proper citations using \cite{} commands
+- Clear figures and tables with proper captions
+- NO placeholder text - every section must have real content
+- The paper MUST compile without errors
+- If compilation fails, debug and fix the LaTeX errors
+
+════════════════════════════════════════════════════════════════════════════════
+                          LAB WRITING STYLE
+════════════════════════════════════════════════════════════════════════════════
+
+Follow these lab-specific conventions to match our paper style:
+
+1. LANGUAGE STYLE:
+   - Use active voice: "We propose", "We examine", "We focus on"
+   - Be direct and confident: "Our main question is...", "We hypothesize that..."
+   - State things clearly and simply - prefer plain language over jargon
+   - Use bold questions as paragraph organizers: {\bf what is X?}
+   - Include specific quantitative claims: "8.97% over baseline"
+   - Avoid fancy wording: "utilize" → "use", "facilitate" → "help"
+
+2. INTRODUCTION STRUCTURE:
+   - Engaging hook (get to the point quickly)
+   - Problem importance
+   - Gap identification
+   - Your approach with method figure reference
+   - Quantitative preview of results
+   - Contribution bullets (3-4 items, action verbs)
+
+3. CONTRIBUTION LISTS:
+   \begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+       \item We propose...
+       \item We conduct...
+       \item We complement...
+   \end{itemize}
+
+4. MODULAR COMMANDS STRUCTURE:
+   Create paper_draft/commands/ directory with:
+   - math.tex: Math notation macros (copy from templates/paper_writing/commands/)
+   - general.tex: Formatting macros (copy from templates/paper_writing/commands/)
+   - macros.tex: Project-specific term definitions
+
+   In main.tex, include:
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+5. REFERENCE CONVENTIONS:
+   Use reference macros from math.tex:
+   - \figref{fig:name} for "figure 1" (lowercase, in-sentence)
+   - \Figref{fig:name} for "Figure 1" (capitalized, start of sentence)
+   - \secref{sec:name} for "section 2"
+
+6. TEXT FORMATTING:
+   - Use \para{Header text} for bold paragraph headers
+   - Define method/dataset names with \textsc and \xspace:
+     \newcommand{\methodname}{\textsc{MethodName}\xspace}
+
+7. TABLE FORMATTING:
+   - Use booktabs package (no vertical lines)
+   - Use \resizebox{\textwidth}{!}{...} for wide tables
+   - Use @{} to remove padding at table edges
+   - Use \cmidrule(lr){x-y} for sub-headers
+   - Use \textsc{} for dataset/method names in headers
+   - Bold best results with {\bf ...}
+
+8. FIGURE FORMATTING:
+   - Use 0.32\textwidth for 3-column subfigures
+   - Use 0.95\linewidth for full-width figures
+   - Use \input{figures/legend} for shared legends
+   - Write self-contained captions explaining key observations
+
+9. RESULTS PRESENTATION:
+   - Define \increase and \decrease for colored arrows (green up, red down)
+   - Bold best results in tables
+   - Report confidence intervals when available
+
+10. ALGORITHM STYLING:
+    - Use algpseudocode with [noend]
+    - Use \triangleright for comments
+
+11. HYPERLINKS (REQUIRED):
+    - Always use \usepackage[hidelinks]{hyperref} or with colored links
+    - All citations, section refs, figure refs, table refs must be clickable
+    - This is essential for reader navigation
+
+════════════════════════════════════════════════════════════════════════════════
+                          WORKFLOW: REVIEW AND REFLECT
+════════════════════════════════════════════════════════════════════════════════
+
+Before calling finish, you MUST complete these review steps:
+
+1. REVIEW RESOURCES (at the start):
+   - Read templates/skills/paper-writer/SKILL.md for detailed guidance
+   - Study templates/paper_writing/lab_style_guide.md for style conventions
+   - Browse paper_examples/ for formatting and language patterns
+
+2. SELF-REFLECTION (before finishing):
+   After writing all sections, review your work against these criteria:
+
+   LANGUAGE CHECK:
+   - [ ] Is the writing clear and jargon-free?
+   - [ ] Are claims specific with quantitative support?
+   - [ ] Is active voice used throughout?
+
+   FORMATTING CHECK:
+   - [ ] Does main.tex include \input{commands/math}, \input{commands/general}, \input{commands/macros}?
+   - [ ] Is hyperref package included for clickable references?
+   - [ ] Do tables use booktabs (no vertical lines)?
+   - [ ] Are best results bolded in tables?
+   - [ ] Are figures/tables properly captioned?
+
+   STRUCTURE CHECK:
+   - [ ] Does introduction follow: hook → importance → gap → approach → preview → contributions?
+   - [ ] Are contribution bullets specific with action verbs?
+   - [ ] Does the paper compile without errors?
+
+3. FIX ISSUES:
+   - Address any issues found in the self-reflection
+   - Re-compile and verify the PDF looks correct
+
+Only after completing this review should you consider the paper finished.

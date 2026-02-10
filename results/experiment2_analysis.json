@@ -1,0 +1,54 @@
+{
+  "dimensions": {
+    "plausibility": {
+      "anchored_mean": 4.94,
+      "anchored_std": 0.31048349392520047,
+      "baseline_mean": 5.0,
+      "baseline_std": 0.0,
+      "diff": -0.05999999999999961,
+      "t_statistic": -1.352728915441745,
+      "p_value": 0.18235161123970436,
+      "effect_size": -0.27077620932171315
+    },
+    "coherence": {
+      "anchored_mean": 5.0,
+      "anchored_std": 0.0,
+      "baseline_mean": 5.0,
+      "baseline_std": 0.0,
+      "diff": 0.0,
+      "t_statistic": NaN,
+      "p_value": NaN,
+      "effect_size": 0.0
+    },
+    "informativeness": {
+      "anchored_mean": 4.28,
+      "anchored_std": 0.448998886412873,
+      "baseline_mean": 4.6,
+      "baseline_std": 0.4898979485566356,
+      "diff": -0.3199999999999994,
+      "t_statistic": -4.413418274938964,
+      "p_value": 5.585401899761817e-05,
+      "effect_size": -0.6446583710904328
+    },
+    "uncertainty_handling": {
+      "anchored_mean": 5.0,
+      "anchored_std": 0.0,
+      "baseline_mean": 4.48,
+      "baseline_std": 0.8772684879784524,
+      "diff": 0.5199999999999996,
+      "t_statistic": 4.149242848546733,
+      "p_value": 0.00013234126806969536,
+      "effect_size": 0.7731113433701253
+    },
+    "news_style": {
+      "anchored_mean": 4.94,
+      "anchored_std": 0.23748684174075835,
+      "baseline_mean": 4.98,
+      "baseline_std": 0.13999999999999999,
+      "diff": -0.040000000000000036,
+      "t_statistic": -1.0,
+      "p_value": 0.32222340595067545,
+      "effect_size": -0.20412414512776497
+    }
+  }
+}

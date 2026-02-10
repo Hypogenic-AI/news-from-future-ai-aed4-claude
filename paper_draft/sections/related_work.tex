@@ -1,0 +1,16 @@
+\section{Related Work}
+\label{sec:related_work}
+
+Our work draws on three research areas: LLM-based forecasting, prediction market integration with AI, and temporal text generation.
+
+\para{LLM forecasting benchmarks.}
+The AutoCast benchmark~\citep{zou2022forecasting} established the first large-scale evaluation of ML models on real-world forecasting questions, revealing a wide gap between model and human crowd performance. \citet{halawi2024approaching} substantially closed this gap with a retrieval-augmented pipeline that achieves Brier scores competitive with human aggregates across five forecasting platforms. ForecastBench~\citep{karger2024forecastbench} introduced a dynamic, contamination-free benchmark regenerated biweekly, on which GPT-4.5 achieves a Brier score of 0.101 versus superforecasters' 0.081. \kalshibench~\citep{smith2025kalshibench} revealed systematic overconfidence in frontier LLMs, with models wrong 15--62\% of the time at the 90\%+ confidence level. PROPHET~\citep{sun2025prophet} introduced a Polymarket-derived benchmark with a Causal Intervened Likelihood metric for assessing question inferability. Our forecasting module builds on these insights, adopting market anchoring as a calibration mechanism.
+
+\para{Prediction markets and LLMs.}
+\citet{schoenegger2024wisdom} demonstrated that the median of 12 diverse LLMs---a ``silicon crowd''---matches human crowd accuracy on Metaculus questions (Brier 0.20 vs.\ 0.19). Critically, they showed that exposing individual LLMs to human crowd medians improves Brier scores by 17--28\%, though simple averaging of human and LLM forecasts outperforms LLM-mediated updating. TruthTensor~\citep{shahabi2026truthtensor} evaluated LLMs as live Polymarket trading agents across 876,567 decisions, finding that all eight frontier models incurred losses, confirming that LLMs cannot consistently beat market prices. \citet{turtel2026future} introduced Foresight Learning, which uses market resolutions as reinforcement learning rewards to train forecasting models, achieving 27\% Brier score improvements. Our approach uses market prices as inference-time anchors rather than training signals, requiring no fine-tuning.
+
+\para{Temporal and future text generation.}
+\citet{jain2024future} formalized future language modeling---generating text conditioned on temporal document histories---using doubly contextualized models with temporal bias terms. Their approach achieves 63\% average quality versus 46\% for non-temporal baselines on ACL Anthology abstracts. \citet{huertas2024news} surveyed automated news generation, documenting the shift toward LLM-based generation that produces articles increasingly indistinguishable from human-written news. Our work differs from both in that we condition generation not on temporal trends in document corpora but on explicit probabilistic forecasts from prediction markets.
+
+\para{LLM-as-judge evaluation.}
+We adopt the LLM-as-judge paradigm~\citep{zheng2023judging}, which has become standard for evaluating open-ended text generation. While this approach introduces potential self-evaluation bias when the same model family generates and evaluates~\citep{zheng2023judging}, it enables systematic evaluation at scale. We discuss this limitation in \secref{sec:discussion}.

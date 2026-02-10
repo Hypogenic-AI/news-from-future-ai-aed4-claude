@@ -1,0 +1,12 @@
+{
+  "plausibility_mean": 5.0,
+  "plausibility_std": 0.0,
+  "coherence_mean": 5.0,
+  "coherence_std": 0.0,
+  "informativeness_mean": 4.9,
+  "informativeness_std": 0.3,
+  "uncertainty_handling_mean": 4.9,
+  "uncertainty_handling_std": 0.3,
+  "news_style_mean": 5.0,
+  "news_style_std": 0.0
+}

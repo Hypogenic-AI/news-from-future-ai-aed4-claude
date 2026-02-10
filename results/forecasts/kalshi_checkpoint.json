@@ -1,0 +1,1806 @@
+{
+  "dataset": "kalshi",
+  "n_questions": 200,
+  "forecasts": [
+    {
+      "id": "KXUSDJPY",
+      "question": "Will the USD/JPY open price be below 153.000 at Nov 14, 2025 at 10am EST?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.38,
+      "pred_anchored": 0.42,
+      "category": "Financials"
+    },
+    {
+      "id": "KXAUSPM",
+      "question": "Will  win the Australian Prime Ministry?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.35,
+      "category": "Elections"
+    },
+    {
+      "id": "KXIPOOPENAI",
+      "question": "When will OpenAI IPO?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.18,
+      "category": "Economics"
+    },
+    {
+      "id": "KXNYCCOUNCIL13",
+      "question": "Who will win the NYC City Council election in District 13?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.35,
+      "category": "Politics"
+    },
+    {
+      "id": "KXOAIPROFIT",
+      "question": "Will OpenAI end its not-for-profit status before Jan 1, 2026?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.12,
+      "pred_anchored": 0.18,
+      "category": "Companies"
+    },
+    {
+      "id": "KXTARIFFSCOPPER",
+      "question": "Will tariffs on copper come into effect before Jan 2026?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXVOTEPATEL",
+      "question": "Will John Fetterman vote for Kash Patel?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Politics"
+    },
+    {
+      "id": "KXEARNINGSMENTIONDKNG",
+      "question": "What will DraftKings Inc. say during their next earnings call?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.92,
+      "pred_anchored": 0.85,
+      "category": "Companies"
+    },
+    {
+      "id": "KXNYCCOUNCIL28",
+      "question": "Who will win the NYC City Council election in District 28?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.32,
+      "category": "Politics"
+    },
+    {
+      "id": "KXDUTCHGAIN",
+      "question": "Will PVV gain seats in 2025 Dutch general election?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.25,
+      "pred_anchored": 0.25,
+      "category": "Elections"
+    },
+    {
+      "id": "KXLALIGAGAME",
+      "question": "Celta Vigo vs Barcelona Winner?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.23,
+      "pred_anchored": 0.24,
+      "category": "Sports"
+    },
+    {
+      "id": "KXNYCCOUNCIL14",
+      "question": "Who will win the NYC City Council election in District 14?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXUSAMBCHILE",
+      "question": "When will Trump's nominee for Ambassador to Chile be confirmed?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.12,
+      "pred_anchored": 0.22,
+      "category": "Politics"
+    },
+    {
+      "id": "KXFIDECANDIDATES",
+      "question": "Who will qualify for the FIDE Candidates tournament?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.22,
+      "pred_anchored": 0.22,
+      "category": "Sports"
+    },
+    {
+      "id": "KXDOGE",
+      "question": "Dogecoin price range  on Nov 16, 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.18,
+      "category": "Crypto"
+    },
+    {
+      "id": "KXOSCARCOSTUME",
+      "question": "Will Tie win Best Costume Design at the Oscars?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXIRACUTS",
+      "question": "How much will the Republican reconcilliation bill cut the Inflation Reduction Act's Energy, Production, and Manufacturing Credits?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.15,
+      "category": "Politics"
+    },
+    {
+      "id": "KXREMITTANCERATE",
+      "question": "How much will the Republicans tax on remittances be in their reconciliation bill?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.05,
+      "category": "Politics"
+    },
+    {
+      "id": "KXGRAMMYNOMROTY",
+      "question": "2026 Grammy nominees for Record of the Year?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXVOTESTEFANIK",
+      "question": "Will Mark Warner vote for Elise Stefanik?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.05,
+      "category": "Politics"
+    },
+    {
+      "id": "KXTSUNAMI",
+      "question": "Tsunami before 2026?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.85,
+      "category": "Climate and Weather"
+    },
+    {
+      "id": "KXALLINGUEST",
+      "question": "Will Donald J. Trump go on the All-In Podcast this year?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.35,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXNHLGAME",
+      "question": "Nashville vs Pittsburgh Winner?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.48,
+      "pred_anchored": 0.48,
+      "category": "Sports"
+    },
+    {
+      "id": "KXIPOKLARNA",
+      "question": "When will Klarna IPO?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.72,
+      "pred_anchored": 0.75,
+      "category": "Economics"
+    },
+    {
+      "id": "KXHURCAT",
+      "question": "Will Melissa become a Category 4 hurricane?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.12,
+      "category": "Climate and Weather"
+    },
+    {
+      "id": "KXFRANCEAMB",
+      "question": "Who will be confirmed as Ambassador to France?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.02,
+      "pred_anchored": 0.01,
+      "category": "Politics"
+    },
+    {
+      "id": "KXDIMONMENTION",
+      "question": "What will Jamie Dimon say during America Business Forum?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Mentions"
+    },
+    {
+      "id": "KXTNOTED",
+      "question": "Will the yield of 10-year U.S. treasury notes be below 3.95 on Nov 13, 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.43,
+      "pred_anchored": 0.43,
+      "category": "Financials"
+    },
+    {
+      "id": "KXGRAMMYNOMSOTY",
+      "question": "2026 Grammy nominees for Song of the Year?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.12,
+      "pred_anchored": 0.12,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXOSCARDOCU",
+      "question": "Will Soundtrack to a Coup d'Etat win Best Documentary Feature Film at the Oscars?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.1,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXVOTERFK",
+      "question": "Will Peter Welch vote for Robert F. Kennedy Jr.?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Politics"
+    },
+    {
+      "id": "KXMUSKNASA",
+      "question": "Will Trump punish SpaceX?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXDOGED",
+      "question": "Dogecoin price  on Nov 16, 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.38,
+      "pred_anchored": 0.43,
+      "category": "Crypto"
+    },
+    {
+      "id": "KXNGUARDCITY",
+      "question": "What cities will Trump send the National Guard to in 2025?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.22,
+      "category": "Politics"
+    },
+    {
+      "id": "KXNYKCOACH",
+      "question": "Who will be the head next coach of New York Pro Men's Basketball?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Sports"
+    },
+    {
+      "id": "KXNFLWINS-TB",
+      "question": "Will the Tampa Bay pro football team win more than 16 times this season?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Sports"
+    },
+    {
+      "id": "KXSONGCHARTTSWIFT",
+      "question": "Will Taylor Swift occupy 3 out of the Top 5 spots on the Billboard Hot 100 for the week of November 8th?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.13,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXOSCARCINE",
+      "question": "Will Wicked win Best Cinematography at the Oscars?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.08,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXDJTPOSTMUSK",
+      "question": "Will Trump post negatively about Elon Musk on Truth Social this year?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.22,
+      "category": "Politics"
+    },
+    {
+      "id": "GOVPARTYNJ",
+      "question": "Will Jack Ciattarelli win the 2025 New Jersey gubernatorial election?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.32,
+      "pred_anchored": 0.28,
+      "category": "Politics"
+    },
+    {
+      "id": "KXXAISUEAPPLE",
+      "question": "Will xAI sue Apple before 2026?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.04,
+      "category": "Politics"
+    },
+    {
+      "id": "KXEARNINGSMENTIONAMD",
+      "question": "What will  say during their next earnings call?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.85,
+      "category": "Companies"
+    },
+    {
+      "id": "KXVOTESHUTDOWNS",
+      "question": "Will Jacky Rosen vote for the next omnibus spending bill, minibus, or government-wide continuing resolution (CR)?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.85,
+      "category": "Politics"
+    },
+    {
+      "id": "KXTRANSSPORTSSUIT",
+      "question": "What states will Trump sue over their trans sports policies?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXPVVSEATS",
+      "question": "Will Party for Freedom (PVV) win below 20 seats in 2025 Dutch general election?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.05,
+      "category": "Elections"
+    },
+    {
+      "id": "KXBALANCESHEET",
+      "question": "Will the Fed's balance sheet shrink to below 7 before Jan 1, 2026?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Economics"
+    },
+    {
+      "id": "KXCPBFUNDING",
+      "question": "Will PBS and NPR be defunded?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXPMKICKINGCONTEST",
+      "question": "Will Participant Successfully Make First Field Goal Attempt",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.32,
+      "pred_anchored": 0.28,
+      "category": "Social"
+    },
+    {
+      "id": "KXRECNCHVOTE",
+      "question": "between 226 to 226 members of the House vote for next reconciliation bill?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Politics"
+    },
+    {
+      "id": "KXSECSTATE",
+      "question": "Will Robert O'Brien be confirmed as Secretary of State by Dec 31, 2026?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXUCLGAME",
+      "question": "Marseille vs Atalanta Winner?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.38,
+      "pred_anchored": 0.36,
+      "category": "Sports"
+    },
+    {
+      "id": "KXLCKAHRIPICK",
+      "question": "Will Ahri be picked in the LCK finals in 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.72,
+      "pred_anchored": 0.72,
+      "category": "Sports"
+    },
+    {
+      "id": "KXUSAMBPOLAND",
+      "question": "When will Trump's nominee for Ambassador to Poland be confirmed?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.65,
+      "pred_anchored": 0.35,
+      "category": "Politics"
+    },
+    {
+      "id": "KXGREENLANDPARTY",
+      "question": "Will the Siumut party win the most seats in the 2025 Greenlandic parliamentary election?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.45,
+      "pred_anchored": 0.35,
+      "category": "Politics"
+    },
+    {
+      "id": "KXTVSHOWSCANCELLED",
+      "question": "Which shows will be cancelled this year?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.35,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXDEFENSESPEND",
+      "question": "How much will Republicans increase defense spending in their reconcilliation bill?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXHURCTOTMAJ",
+      "question": "Will there be more than 2 major Atlantic hurricanes in 2025?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.72,
+      "pred_anchored": 0.72,
+      "category": "Climate and Weather"
+    },
+    {
+      "id": "KXMUSKPACKAGEVOTE",
+      "question": "Will Tesla shareholders approve Elon Musk's new compensation package at the next annual shareholder meeting?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.72,
+      "pred_anchored": 0.72,
+      "category": "Companies"
+    },
+    {
+      "id": "KXCSGOMAP",
+      "question": "Will Vitality win Team Falcons vs. Vitality: Map 2?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.62,
+      "pred_anchored": 0.62,
+      "category": "Sports"
+    },
+    {
+      "id": "KXNCAAFGAME",
+      "question": "Boise St. at San Diego St. Winner?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.61,
+      "pred_anchored": 0.57,
+      "category": "Sports"
+    },
+    {
+      "id": "KXAIRDROPPUMPFUN",
+      "question": "Will PumpFun conduct an airdrop before Oct 1, 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.72,
+      "pred_anchored": 0.68,
+      "category": "Crypto"
+    },
+    {
+      "id": "KXNFLANYTD",
+      "question": "Baltimore at Cleveland: Anytime Touchdown Scorer: Cleveland D/ST",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.06,
+      "pred_anchored": 0.07,
+      "category": "Sports"
+    },
+    {
+      "id": "KXTURKEYAMB",
+      "question": "Who will be confirmed as Ambassador to Turkey?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": "Politics"
+    },
+    {
+      "id": "KXBIDENMENTION",
+      "question": "What will Joe Biden say during Ben Nelson Gala on November 7th?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.08,
+      "category": "Mentions"
+    },
+    {
+      "id": "KXGARLAND",
+      "question": "Will the Supreme Court rule in favor of 'ghost gun' regulation?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.38,
+      "category": "Politics"
+    },
+    {
+      "id": "KXSECINT",
+      "question": "Will David Bernhardt be confirmed as Secretary of the Interior by Dec 31, 2026?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.03,
+      "category": "Politics"
+    },
+    {
+      "id": "KXAPCALLVAGOV",
+      "question": "Will the Associated Press (AP) call the 2025 Virginia gubernatorial election before 9:30 PM ET?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.12,
+      "pred_anchored": 0.13,
+      "category": "Elections"
+    },
+    {
+      "id": "KXVOTECHAVEZDEREMER",
+      "question": "Will John Hickenlooper vote for Lori Chavez-DeRemer?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.02,
+      "pred_anchored": 0.03,
+      "category": "Politics"
+    },
+    {
+      "id": "KXNEWCOACHCHIBEARS",
+      "question": "Who will be the next Chicago Bears head coach?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXDEDUCT",
+      "question": "What will the standard deduction be in the Republican reconciliation bill?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.15,
+      "category": "Politics"
+    },
+    {
+      "id": "KXDUTCHSECOND",
+      "question": "Will People's Party for Freedom and Democracy finish 2nd in the Netherlands?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.32,
+      "pred_anchored": 0.32,
+      "category": "Elections"
+    },
+    {
+      "id": "KXMETACRITICGAGA",
+      "question": "Next Lady Gaga album Metacritic score?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.38,
+      "pred_anchored": 0.38,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXUSDJPYH",
+      "question": "Will the USD/JPY open price be above 161.60900 at Nov 14, 2025 at 4pm EST?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.38,
+      "pred_anchored": 0.36,
+      "category": "Financials"
+    },
+    {
+      "id": "KXFDVMET",
+      "question": "What will MET FDV be 1 day after launch?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": "Crypto"
+    },
+    {
+      "id": "KXNFLWINS-PIT",
+      "question": "Will the Pittsburgh pro football team win more than 15 times this season?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.03,
+      "category": "Sports"
+    },
+    {
+      "id": "KXOSCARNOMPIC",
+      "question": "2025 Best Picture Oscar nominations?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXBLOCKTARIFF",
+      "question": "Will the courts block any of Trump's tariffs this year?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXAIOPEN",
+      "question": "Will there be an open-source AI model before Jan 1, 2026?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.65,
+      "pred_anchored": 0.55,
+      "category": "Science and Technology"
+    },
+    {
+      "id": "KXRTSARAHSOIL",
+      "question": "Sarah's Oil Rotten Tomatoes score?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.92,
+      "pred_anchored": 0.92,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXRECBILL",
+      "question": "Will Increase the deductibility of car loan interest be in the next reconcilliation bill?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.03,
+      "category": "Politics"
+    },
+    {
+      "id": "KXGRAMMYNOMNAOTY",
+      "question": "2026 Grammy nominees for New Artist?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.12,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXEPLTOTAL",
+      "question": "Liverpool at Manchester City: Totals",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.36,
+      "pred_anchored": 0.36,
+      "category": "Sports"
+    },
+    {
+      "id": "KXCS2MAP",
+      "question": "Will Vitality win BLAST Rivals 2025 Season 2: Spirit vs. Vitality?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.53,
+      "pred_anchored": 0.48,
+      "category": "Sports"
+    },
+    {
+      "id": "KXFDVWLFI",
+      "question": "Will World Liberty Financial FDV be above 15B at 10:00 AM ET on Jan 1, 2027?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.07,
+      "category": "Crypto"
+    },
+    {
+      "id": "KXHIGHDEN",
+      "question": "Will the **high temp in Denver** be >74\u00b0 on Nov 15, 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.04,
+      "category": "Climate and Weather"
+    },
+    {
+      "id": "KXEUROLEAGUEGAME",
+      "question": "FC Barcelona vs Virtus Bologna Winner?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.62,
+      "pred_anchored": 0.65,
+      "category": "Sports"
+    },
+    {
+      "id": "KXNFLWINS-LAC",
+      "question": "Will the Los Angeles C pro football team win more than 16 times this season?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.03,
+      "category": "Sports"
+    },
+    {
+      "id": "KXUSAMBSWISS",
+      "question": "When will Trump's nominee for Ambassador to Switzerland be confirmed?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXUCLGAME",
+      "question": "Marseille vs Atalanta Winner?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.28,
+      "pred_anchored": 0.28,
+      "category": "Sports"
+    },
+    {
+      "id": "KXNFLWINS-PHI",
+      "question": "Will the Philadelphia pro football team win more than 6 times this season?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.92,
+      "pred_anchored": 0.92,
+      "category": "Sports"
+    },
+    {
+      "id": "KXGRAMMYNOMCOUNTSC",
+      "question": "Number of Grammy Nominations at the 68th Grammy Awards for Sabrina Carpenter?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Sports"
+    },
+    {
+      "id": "KXTRUMPNOMMAX",
+      "question": "Will Michael Kratsios get the most votes of any Trump Cabinet nominee?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Politics"
+    },
+    {
+      "id": "KXPRESVISIT",
+      "question": "Will Trump visit Malaysia in the first year?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXTNFMENTION",
+      "question": "What will Al Michaels and/or Kirk Herbstreit say during New York at New England pro football game commentary?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.65,
+      "pred_anchored": 0.42,
+      "category": "Mentions"
+    },
+    {
+      "id": "KXF1RACEPODIUM",
+      "question": "Sao Paulo Grand Prix Podium Finishers?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.03,
+      "category": "Sports"
+    },
+    {
+      "id": "KXADMINCMS",
+      "question": "When will Trump's nominee for Administrator of the Centers for Medicare & Medicaid Services be confirmed?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXVOTESHUTDOWNH",
+      "question": "Will Don Davis vote for the next omnibus spending bill, minibus, or government-wide continuing resolution (CR)?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.85,
+      "category": "Politics"
+    },
+    {
+      "id": "KXEPLSPREAD",
+      "question": "Manchester City wins by over 1.5 goals?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.38,
+      "pred_anchored": 0.32,
+      "category": "Sports"
+    },
+    {
+      "id": "KXFOREIGNAID",
+      "question": "Will the US cut any foreign aid before 2026?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.7,
+      "pred_anchored": 0.75,
+      "category": "Politics"
+    },
+    {
+      "id": "KXROMANIATOP2",
+      "question": "Who will win the first round of the Romanian presidential election?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXVIOLENCEW",
+      "question": "between 278 to 281 members of the House vote for Violence Against Women by Illegal Aliens Act?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.03,
+      "category": "Politics"
+    },
+    {
+      "id": "KXHULKHOGANATTEND",
+      "question": "Who will attend Hulk Hogan's funeral?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.65,
+      "pred_anchored": 0.65,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXPARTYWINNL",
+      "question": "Who will win the election in the Netherlands?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Elections"
+    },
+    {
+      "id": "KXQUORUMTX",
+      "question": "When will quorum be reached in the Texas legislature?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.99,
+      "pred_anchored": 0.98,
+      "category": "Politics"
+    },
+    {
+      "id": "KXLEAVELECORNU",
+      "question": "Will S\u00e9bastien Lecornu leave Prime Minister of France before Jan 1, 2027?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.85,
+      "category": "Politics"
+    },
+    {
+      "id": "KXJREPODCAST",
+      "question": "Will the Joe Rogan Experience fall from its #1 spot before Jan 1, 2026?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.42,
+      "pred_anchored": 0.42,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXCHOPSTICKS",
+      "question": "Will SpaceX successfully use the chopsticks to catch the next Starship SuperHeavy launch?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.15,
+      "category": "Science and Technology"
+    },
+    {
+      "id": "KXCALIREDISTRICTING",
+      "question": "Will California's Redistricting referendum pass?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.38,
+      "pred_anchored": 0.32,
+      "category": "Elections"
+    },
+    {
+      "id": "KXINDEXADD",
+      "question": "What companies will be added to the S&P 500 in 2025?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.42,
+      "pred_anchored": 0.42,
+      "category": "World"
+    },
+    {
+      "id": "KXXRPMINY",
+      "question": "How low will XRP get this year?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.92,
+      "pred_anchored": 0.85,
+      "category": "Crypto"
+    },
+    {
+      "id": "KXAPPRANKFREE2",
+      "question": "Runner-up US iPhone app on Nov 13, 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXAZPORNLAW",
+      "question": "Will a bill that mandates age verification for online pornography become law before Dec 31, 2025?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.35,
+      "category": "Politics"
+    },
+    {
+      "id": "KXRECBASELINE",
+      "question": "Will the Republican reconcilliation bill be scored relative to a current policy baseline?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.15,
+      "category": "Politics"
+    },
+    {
+      "id": "KXFLIGHTLAX",
+      "question": "Will there be more than 600 delays and cancellations at Los Angeles on November 13, 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.13,
+      "category": "Transportation"
+    },
+    {
+      "id": "KXLOLLA",
+      "question": "Will Travis Scott be part of the lineup for Lollapalooza Chicago in 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXEARNINGSMENTIONCELH",
+      "question": "What will Celsius Holdings, Inc. say during their next earnings call?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": "Companies"
+    },
+    {
+      "id": "KXRECNCHVOTE",
+      "question": "above 227 or above members of the House vote for next reconciliation bill?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.35,
+      "category": "Politics"
+    },
+    {
+      "id": "KXTAIWANREF",
+      "question": "Will Taiwanese referendum on the operation of the Maanshan Nuclear Power Plant's second reactor in Taiwan pass?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.28,
+      "category": "Elections"
+    },
+    {
+      "id": "KXELECTCONCEDE",
+      "question": "Will Curtis Sliwa concede defeat in the 2025 New York City mayoral election before Nov 5, 2025?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.65,
+      "pred_anchored": 0.05,
+      "category": "Elections"
+    },
+    {
+      "id": "KXUSAMBMEXICO",
+      "question": "When will Trump's nominee for Ambassador to Mexico be confirmed?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.05,
+      "category": "Politics"
+    },
+    {
+      "id": "KXRESCISSION",
+      "question": "Will Trump ask for a budget rescission from Congress?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.15,
+      "category": "Politics"
+    },
+    {
+      "id": "KXADP",
+      "question": "ADP employment change in Oct 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.93,
+      "category": "Economics"
+    },
+    {
+      "id": "KXFIFAGAME",
+      "question": "Italy vs Norway Winner?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Sports"
+    },
+    {
+      "id": "KXODINVCTFINALS",
+      "question": "Will all players purchase the Odin more than 3 times at VCT finals?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.72,
+      "category": "Sports"
+    },
+    {
+      "id": "KXNCAAMBSPREAD",
+      "question": "Houston wins by over 6.5 Points?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.57,
+      "pred_anchored": 0.43,
+      "category": "Sports"
+    },
+    {
+      "id": "KXPERFORMVS",
+      "question": "Who will perform at the The Victoria's Secret Fashion Show 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.08,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXAIRDROPHYPE",
+      "question": "Will Hyperliquid conduct an airdrop before Oct 1, 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.7,
+      "pred_anchored": 0.65,
+      "category": "Crypto"
+    },
+    {
+      "id": "KXEARNINGSMENTIONKO",
+      "question": "What will The Coca-Cola Company say during their next earnings call?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.93,
+      "pred_anchored": 0.92,
+      "category": "Companies"
+    },
+    {
+      "id": "KXFEDHIKE",
+      "question": "Will the Federal Reserve hike rates by December 31, 2024?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": "Economics"
+    },
+    {
+      "id": "KXBESTACTRMUS",
+      "question": "Will Tie win Best Performance by an Actress in a Leading Role in a Musical at the Tonys?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXCOACHELLA",
+      "question": "Will Lorde be part of the lineup for Coachella in 2026?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.12,
+      "pred_anchored": 0.13,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXSECHOMELAND",
+      "question": "Will Kristi Noem be confirmed as Secretary of Homeland Security by Dec 31, 2026?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.03,
+      "category": "Politics"
+    },
+    {
+      "id": "KXGERMANYPARTY",
+      "question": "Will the SDP party win the most seats in the 2025 German Bundestag election?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXBILATERALMENTION",
+      "question": "What will Trump say during Next Bilateral Meeting with a Foreign Leader in the Oval Office?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXMAYORNOLA",
+      "question": "Who will win New Orleans Mayoral Election?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": "Elections"
+    },
+    {
+      "id": "KXNFLWINS-TB",
+      "question": "Will the Tampa Bay pro football team win more than 15 times this season?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.02,
+      "pred_anchored": 0.01,
+      "category": "Sports"
+    },
+    {
+      "id": "KXBUNDESLIGAGAME",
+      "question": "Frankfurt vs Mainz Winner?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.28,
+      "pred_anchored": 0.28,
+      "category": "Sports"
+    },
+    {
+      "id": "KXNFLREC",
+      "question": "Tez Johnson records 4+ receptions",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.41,
+      "pred_anchored": 0.38,
+      "category": "Sports"
+    },
+    {
+      "id": "KXNEXTCOACHOUTNBA",
+      "question": "Who will be the next coach out in pro men's basketball?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.12,
+      "category": "Sports"
+    },
+    {
+      "id": "KXSPOTIFYBILLIONS",
+      "question": "Will Love Galore (feat. Travis Scott)) hit 1 Billion Spotify streams in 2025?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.28,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXTARIFFLENGTHPRC",
+      "question": "Will Trump's 10% tariffs on all Chinese goods end before Mar 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.25,
+      "category": "Politics"
+    },
+    {
+      "id": "KXNFLREC",
+      "question": "Tez Johnson records 5+ receptions",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.23,
+      "pred_anchored": 0.32,
+      "category": "Sports"
+    },
+    {
+      "id": "KXFREESCORESYRIA",
+      "question": "What will Syria's Freedom House score be in 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.02,
+      "pred_anchored": 0.03,
+      "category": "Politics"
+    },
+    {
+      "id": "KXUSAMBVATICAN",
+      "question": "When will Trump's nominee for Ambassador to the Vatican be confirmed?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXSUBPOENAATTEND",
+      "question": "Who will attend depositions regarding House Oversight Committee subpoena on Jeffrey Epstein?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.05,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXDIROSTP",
+      "question": "When will Trump's nominee for Director of OSTP be confirmed?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXGERCOALITION",
+      "question": "Will Blackberry Coalition (CDU/CSU, SPD, and BSW) make up the next government of Germany?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXUELGAME",
+      "question": "FC Viktoria Plzen vs Fenerbahce Istanbul Winner?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.28,
+      "pred_anchored": 0.28,
+      "category": "Sports"
+    },
+    {
+      "id": "KXNORWAYSECOND",
+      "question": "Will H finish 2nd in Norway?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.65,
+      "pred_anchored": 0.65,
+      "category": "Elections"
+    },
+    {
+      "id": "KXBELGIANPLGAME",
+      "question": "Yellow-Red KV Mechelen vs Union Saint-Gilloise Winner?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.62,
+      "pred_anchored": 0.58,
+      "category": "Sports"
+    },
+    {
+      "id": "KXUSAMBOAS",
+      "question": "When will Trump's nominee for Ambassador to the OAS be confirmed?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXMELANIAMENTION",
+      "question": "What will Melania Trump say during Executive Order signing on November 13th?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Mentions"
+    },
+    {
+      "id": "KXMUSKINJ",
+      "question": "Will Elon Musk win an injunction against OpenAI?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.18,
+      "category": "Companies"
+    },
+    {
+      "id": "KXNEWTAYLORAMAS",
+      "question": "Will New Original Album be announced this year?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.42,
+      "pred_anchored": 0.62,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXNFLWINS-WAS",
+      "question": "Will the Washi pro football team win more than 15 times this season?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.13,
+      "category": "Sports"
+    },
+    {
+      "id": "KXMETACRITICGAGA",
+      "question": "Next Lady Gaga album Metacritic score?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.68,
+      "pred_anchored": 0.68,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXLALEADEROUT",
+      "question": "Will Nicol\u00e1s Maduro leave office next in this set?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXUECLGAME",
+      "question": "Shkendija Tetovo vs Jagiellonia Bialystok Winner?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.23,
+      "pred_anchored": 0.22,
+      "category": "Sports"
+    },
+    {
+      "id": "KXEARNINGSMENTIONGOOGL",
+      "question": "What will Alphabet Inc. say during their next earnings call?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.03,
+      "category": "Companies"
+    },
+    {
+      "id": "KXRECNCSVOTE",
+      "question": "between 56 to 56 members of the Senate vote for next budget reconciliation bill?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.03,
+      "category": "Politics"
+    },
+    {
+      "id": "KXAUSSEATSLABOR",
+      "question": "above 85 or above Labor seats won?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXNFLWINS-DET",
+      "question": "Will the Detroit pro football team win more than 15 times this season?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": "Sports"
+    },
+    {
+      "id": "KX60MINMENTION",
+      "question": "What will Donald Trump say during next interview on 60 Minutes with Donald Trump?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Mentions"
+    },
+    {
+      "id": "KXNOLA1ROUND",
+      "question": "Will anyone win 2025 New Orleans mayoral election in the first round?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.25,
+      "pred_anchored": 0.15,
+      "category": "Elections"
+    },
+    {
+      "id": "KXTOP10BILLBOARDSPOTSTS",
+      "question": "How many spots on the Billboard Hot 100's top 10 will Taylor Swift hold for the week of Nov 15, 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXMIDSEASONINVITATIONALB",
+      "question": "Will Movistar KOI win the 2025 Mid-Season Invitational?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Sports"
+    },
+    {
+      "id": "KXUSDJPY",
+      "question": "Will the USD/JPY open price be above 156.249 at Nov 14, 2025 at 10am EST?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.62,
+      "pred_anchored": 0.62,
+      "category": "Financials"
+    },
+    {
+      "id": "KXWLEADER",
+      "question": "Will Trump meet with Xi Jinping before 2025?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXNFLWINS-SEA",
+      "question": "Will the Seattle pro football team win more than 6 times this season?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.78,
+      "pred_anchored": 0.78,
+      "category": "Sports"
+    },
+    {
+      "id": "KXUSAMBMEXICO",
+      "question": "When will Trump's nominee for Ambassador to Mexico be confirmed?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.12,
+      "category": "Politics"
+    },
+    {
+      "id": "KXUSAMBUNFOODAGRI",
+      "question": "When will Trump's nominee for Ambassador to UN Food and Agriculture be confirmed?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.15,
+      "category": "Politics"
+    },
+    {
+      "id": "KXKLARSTRIP",
+      "question": "Will Klarna or Stripe IPO first?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.55,
+      "pred_anchored": 0.55,
+      "category": "Financials"
+    },
+    {
+      "id": "KXNFL2TD",
+      "question": "Tampa Bay at Buffalo: Two or More Touchdowns Scorer: Rachaad White",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.1,
+      "pred_anchored": 0.11,
+      "category": "Sports"
+    },
+    {
+      "id": "KXFRENCHPM",
+      "question": "Who wil be the next French Prime Minister?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXBIGGESTQUAKE",
+      "question": "What will the biggest earthquake be this year?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.07,
+      "pred_anchored": 0.13,
+      "category": "Climate and Weather"
+    },
+    {
+      "id": "KXAMESOHIO",
+      "question": "Will the Supreme Court rule in favor of Ames in Ames v. Ohio Department of Youth Services",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.62,
+      "pred_anchored": 0.38,
+      "category": "Politics"
+    },
+    {
+      "id": "KXAUSPM",
+      "question": "Will  win the Australian Prime Ministry?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.7,
+      "pred_anchored": 0.75,
+      "category": "Elections"
+    },
+    {
+      "id": "KXACQUIRECOINBASE",
+      "question": "Will Coinbase announces an acquisition of any company in 2025?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.42,
+      "pred_anchored": 0.55,
+      "category": "Financials"
+    },
+    {
+      "id": "KXLAKENRILEY",
+      "question": "Will above 80 or above members of the Senate vote for Laken Riley Act?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXTOPALBUMBYTAYLORSWIFT",
+      "question": "Taylor Swift has a #1 album in 2025?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.72,
+      "pred_anchored": 0.72,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXROLLINGLOUD",
+      "question": "Will Ye be part of the lineup for Rolling Loud India in 2027?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.07,
+      "pred_anchored": 0.07,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXTOPALBUMBYARI",
+      "question": "Ariana Grande has a #1 album in 2025?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.42,
+      "pred_anchored": 0.42,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXMANTISFREETHROWS",
+      "question": "How long will it take for Young Mantis to hit 100 free throws in a row?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.02,
+      "pred_anchored": 0.01,
+      "category": "Sports"
+    },
+    {
+      "id": "KXPUBLICADV",
+      "question": "Will Calvin Sun be elected to be NYC Public Advocate in 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.03,
+      "category": "Elections"
+    },
+    {
+      "id": "KXCANRESIGNPARTY",
+      "question": "Which Canadian party leaders will resign after this year's election?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.08,
+      "category": "Politics"
+    },
+    {
+      "id": "KXGPTS",
+      "question": "Will OpenAI release a model called GPT4.5 before one called GPT5?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.68,
+      "pred_anchored": 0.68,
+      "category": "Science and Technology"
+    },
+    {
+      "id": "KXUSAMBTURKEY",
+      "question": "When will Trump's nominee for Ambassador to Turkey be confirmed?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.12,
+      "category": "Politics"
+    },
+    {
+      "id": "KXGOVTSPEND",
+      "question": "Will government spending increase by 1000000000 before 2026?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.92,
+      "pred_anchored": 0.95,
+      "category": "Politics"
+    },
+    {
+      "id": "KXIRISHPM",
+      "question": "Will a member of Sinn F\u00e9in be the next Irish Taoiseach?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.45,
+      "pred_anchored": 0.45,
+      "category": "Elections"
+    },
+    {
+      "id": "KXNETFLIXRANKSHOW",
+      "question": "Top Netflix show on Nov 10, 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.04,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXEUROVISIONJURY",
+      "question": "Who will win the Jury Vote in Eurovision 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.03,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXPROTOCOLSTATEDEPT",
+      "question": "When will Trump's nominee for Chief of Protocol at the State Department be confirmed?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Politics"
+    },
+    {
+      "id": "KXNFLWINS-NYG",
+      "question": "Will the New York G pro football team win more than 16 times this season?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": "Sports"
+    },
+    {
+      "id": "KXMLBWSMVP",
+      "question": "Who will win Championship MVP?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.13,
+      "pred_anchored": 0.08,
+      "category": "Sports"
+    },
+    {
+      "id": "KXHIGHNY",
+      "question": "Will the **high temp in NYC** be <49\u00b0 on Nov 15, 2025?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.32,
+      "pred_anchored": 0.27,
+      "category": "Climate and Weather"
+    },
+    {
+      "id": "KXOSCARCINE",
+      "question": "Will Tie win Best Cinematography at the Oscars?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.05,
+      "category": "Entertainment"
+    },
+    {
+      "id": "KXTIKTOKBAN",
+      "question": "Will TikTok be banned by December 31, 2025?",
+      "resolution": 1.0,
+      "community_prediction": null,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.35,
+      "category": "Companies"
+    },
+    {
+      "id": "KXWTAFINALS",
+      "question": "Will Jasmine Paolini win the WTA Finals Women's Singles?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.07,
+      "pred_anchored": 0.07,
+      "category": "Sports"
+    },
+    {
+      "id": "KXDCUSATTORNEY",
+      "question": "Who will be confirmed as DC US Attorney?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.05,
+      "category": "Politics"
+    },
+    {
+      "id": "KXGRIFFINMENTION",
+      "question": "What will Ken Griffin say during America Business Forum?",
+      "resolution": 0.0,
+      "community_prediction": null,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.18,
+      "category": "Mentions"
+    }
+  ]
+}

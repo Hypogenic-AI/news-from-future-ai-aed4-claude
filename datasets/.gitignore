@@ -1,0 +1,9 @@
+# Large dataset files - download using instructions in README.md
+*.jsonl
+*.json
+*.csv
+*.parquet
+*.arrow
+*.cache
+__pycache__/
+.cache/

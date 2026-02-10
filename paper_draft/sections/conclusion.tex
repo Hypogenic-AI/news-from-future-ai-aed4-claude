@@ -1,0 +1,6 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We introduced \futurenews, the first end-to-end system for generating calibrated news articles about future events by combining LLM forecasting with prediction market data. Our experiments demonstrate three key findings. First, market-anchored \gptfour achieves a Brier score of 0.060, a statistically significant 29.2\% improvement over unanchored forecasting that nearly matches the human crowd aggregate. Second, generated articles are consistently high quality, exceeding 4.2/5.0 across all evaluation dimensions. Third, probability-conditioned generation yields significantly better uncertainty handling than unconditioned generation, with a large effect size (Cohen's $d{=}0.77$).
+
+The core insight is that prediction markets and LLMs address complementary weaknesses: markets provide calibrated probabilities that LLMs lack, while LLMs provide narrative capabilities that markets lack. We believe this synergy opens a practical path toward tools that make probabilistic forecasts accessible through natural language, and we encourage future work on human evaluation, multi-model comparison, and prospective temporal validation.

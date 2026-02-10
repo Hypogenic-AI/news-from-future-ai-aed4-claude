@@ -1,0 +1,1815 @@
+{
+  "dataset": "halawi",
+  "n_questions": 200,
+  "forecasts": [
+    {
+      "id": "https://www.metaculus.com/api2/questions/17938/",
+      "question": "Will United States win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.279,
+      "pred_baseline": 0.22,
+      "pred_anchored": 0.28,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17379/",
+      "question": "Will OpenAI release a \"product\" after ChatGPT before 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.117,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.1,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18859/",
+      "question": "Will the UN Security Council adopt a resolution related to the Nagorno Karabakh conflict between Azerbaijan and Armenia before October 1, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.051,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.07,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18538/",
+      "question": "Will Patricia Bullrich win the 2023 Argentine presidential election?",
+      "resolution": 0.0,
+      "community_prediction": 0.064,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.06,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18385/",
+      "question": "Will Ecuador's state of emergency be extended beyond the initial 60 days?",
+      "resolution": 1.0,
+      "community_prediction": 0.489,
+      "pred_baseline": 0.75,
+      "pred_anchored": 0.62,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17952/",
+      "question": "Will Colombia win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.031,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.03,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17933/",
+      "question": "Will Japan win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.172,
+      "pred_baseline": 0.07,
+      "pred_anchored": 0.13,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/2913",
+      "question": "Will there be a lethal confrontation between the national military forces and/or law enforcement of Russia and those of a NATO member state resulting in at least three fatalities before 16 December 20",
+      "resolution": 0.0,
+      "community_prediction": 0.0096,
+      "pred_baseline": 0.02,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17925/",
+      "question": "Will Switzerland win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.012,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/3076",
+      "question": "Will SpaceX's next Starship orbital flight test be launched successfully before 1 February 2024?",
+      "resolution": 1.0,
+      "community_prediction": 0.7124,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.65,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19492/",
+      "question": "Will Israel launch a large-scale ground offensive into Gaza before November 1, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.658,
+      "pred_baseline": 0.95,
+      "pred_anchored": 0.75,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17517/",
+      "question": "Will Microsoft acquire Activision Blizzard in 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.875,
+      "pred_baseline": 0.7,
+      "pred_anchored": 0.85,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17516/",
+      "question": "Will the Chinese team at the 64th International Math Olympiad be the top ranked team again?",
+      "resolution": 1.0,
+      "community_prediction": 0.766,
+      "pred_baseline": 0.65,
+      "pred_anchored": 0.75,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17928/",
+      "question": "Will Nigeria win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.012,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18354/",
+      "question": "Will Arizona Cardinals advance to the divisional round of the 2024 NFL playoffs?",
+      "resolution": 0.0,
+      "community_prediction": 0.032,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.03,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18523/",
+      "question": "Will the WHO name BA.2.86 as a SARS-CoV-2 Variant of Interest before October 1, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.085,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.12,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20046/",
+      "question": "Will OpenAI have fewer than the following numbers of employees before January 1, 2024? (\u2264 300)",
+      "resolution": 0.0,
+      "community_prediction": 0.037,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.04,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17380/",
+      "question": "Will OpenAI open-source GPT-3 before 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.088,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.05,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/3068",
+      "question": "Will the next Speaker of the US House of Representatives be elected with votes from both Republicans and Democrats?",
+      "resolution": 0.0,
+      "community_prediction": 0.1821,
+      "pred_baseline": 0.25,
+      "pred_anchored": 0.22,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18338/",
+      "question": "Will Denver Broncos advance to the divisional round of the 2024 NFL playoffs?",
+      "resolution": 0.0,
+      "community_prediction": 0.086,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/3171",
+      "question": "Will a UN member state other than the US and Gulf Cooperation Council (GCC) members publicly acknowledge that it executed a military strike from the air or sea against a ground target within the terri",
+      "resolution": 1.0,
+      "community_prediction": 0.6909,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.35,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19458/",
+      "question": "Will Lee Zeldin (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.02,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18356/",
+      "question": "Will San Francisco 49ers advance to the divisional round of the 2024 NFL playoffs?",
+      "resolution": 1.0,
+      "community_prediction": 0.867,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.89,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19616/",
+      "question": "Will RB Salzburg win the 2023/2024 UEFA Champions League?",
+      "resolution": 0.0,
+      "community_prediction": 0.044,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19089/",
+      "question": "Before October 1, 2023, will US Senator Bob Menendez announce that he is resigning?",
+      "resolution": 0.0,
+      "community_prediction": 0.045,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.05,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17327/",
+      "question": "Will Lionel Messi next join Futbol Club Barcelona as a club player?",
+      "resolution": 0.0,
+      "community_prediction": 0.01,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18090/",
+      "question": "Will the first independent replication attempt confirm the discovery of room-temperature and ambient-pressure superconductivity in LK-99?",
+      "resolution": 0.0,
+      "community_prediction": 0.237,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.1,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/3012",
+      "question": "Will a winner of the 2023 Nobel Memorial Prize in Economic Sciences have a faculty appointment at Harvard University or the Massachusetts Institute of Technology (MIT) when the prize is announced?",
+      "resolution": 1.0,
+      "community_prediction": 0.4472,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.42,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19158/",
+      "question": "Will Baltimore Orioles win the 2023 World Series?",
+      "resolution": 0.0,
+      "community_prediction": 0.135,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/2926",
+      "question": "Before 10 November 2023, will the US impose new export restrictions that would prohibit the export of Nvidia's current A800 microchips to Chinese entities or China without a license?",
+      "resolution": 0.0,
+      "community_prediction": 0.0976,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.18,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18068/",
+      "question": "Will Meta launch a Threads web app before October 1, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.848,
+      "pred_baseline": 0.7,
+      "pred_anchored": 0.8,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18352/",
+      "question": "Will New Orleans Saints advance to the divisional round of the 2024 NFL playoffs?",
+      "resolution": 0.0,
+      "community_prediction": 0.111,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.12,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19156/",
+      "question": "Will Miami Marlins win the 2023 World Series?",
+      "resolution": 0.0,
+      "community_prediction": 0.018,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/2979",
+      "question": "Will the Supreme Court of Israel outright strike down the 2023 amendment to Basic Law: The Judiciary regarding the \"reasonableness\" standard?",
+      "resolution": 1.0,
+      "community_prediction": 0.5881,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.65,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/3008",
+      "question": "Will the US House of Representatives officially open an impeachment inquiry into President Biden before 1 January 2024?",
+      "resolution": 1.0,
+      "community_prediction": 0.43,
+      "pred_baseline": 0.99,
+      "pred_anchored": 0.55,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19193/",
+      "question": "Will Nancy Mace (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.033,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17930/",
+      "question": "Will Spain win the 2023 FIFA Women's World Cup?",
+      "resolution": 1.0,
+      "community_prediction": 0.443,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.44,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19182/",
+      "question": "Will Jim Banks (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.037,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.04,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19160/",
+      "question": "Will Houston Astros win the 2023 World Series?",
+      "resolution": 0.0,
+      "community_prediction": 0.258,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.18,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18684/",
+      "question": "Will a US spot Ethereum ETF be approved in 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.075,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.03,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17571/",
+      "question": "Will the Wagner Group control a part of Moscow by July 1, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.033,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19625/",
+      "question": "Will Shakhtar Donetsk win the 2023/2024 UEFA Champions League?",
+      "resolution": 0.0,
+      "community_prediction": 0.009,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20741/",
+      "question": "Will the ban on imports of Apple watches with blood oxygen sensors take effect before December 27, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.89,
+      "pred_baseline": 0.95,
+      "pred_anchored": 0.92,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17944/",
+      "question": "Will Brazil win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.039,
+      "pred_baseline": 0.07,
+      "pred_anchored": 0.04,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19192/",
+      "question": "Will the MONUSCO UN peacekeeping mission to the Democratic Republic of the Congo be extended with a military personnel ceiling above 11,000 before January 1, 2024?",
+      "resolution": 1.0,
+      "community_prediction": 0.509,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.15,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17916/",
+      "question": "Will a nationwide UPS strike be underway in the United States on August 4, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.047,
+      "pred_baseline": 0.3,
+      "pred_anchored": 0.08,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19104/",
+      "question": "Will Ukraine have de facto control of the Tokmak railway station on January 1, 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.036,
+      "pred_baseline": 0.02,
+      "pred_anchored": 0.03,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19184/",
+      "question": "Will Elise Stefanik (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.041,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.05,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18335/",
+      "question": "Will Indianapolis Colts advance to the divisional round of the 2024 NFL playoffs?",
+      "resolution": 0.0,
+      "community_prediction": 0.109,
+      "pred_baseline": 0.12,
+      "pred_anchored": 0.12,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17792/",
+      "question": "Will Ohio Issue 1 pass in the August 2023 election?",
+      "resolution": 0.0,
+      "community_prediction": 0.256,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.25,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17580/",
+      "question": "Will the agreement between the Kremlin and the Wagner Group hold through the end of June?",
+      "resolution": 1.0,
+      "community_prediction": 0.911,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.93,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18395/",
+      "question": "Will Luisa Gonz\u00e1lez win Ecuador\u2019s 2023 presidential election?",
+      "resolution": 0.0,
+      "community_prediction": 0.528,
+      "pred_baseline": 0.4,
+      "pred_anchored": 0.5,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19099/",
+      "question": "Will PVV win the most seats in the Dutch parliamentary elections of 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.079,
+      "pred_baseline": 0.99,
+      "pred_anchored": 0.1,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20592/",
+      "question": "Will the US Supreme Court grant a writ of certiorari to the presidential immunity case before February 1, 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.632,
+      "pred_baseline": 0.65,
+      "pred_anchored": 0.72,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/3013",
+      "question": "Will the government of Belarus publicly announce or acknowledge that its armed forces have engaged in armed fighting in Ukraine before 21 October 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.02,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17932/",
+      "question": "Will Zambia win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.011,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/2918",
+      "question": "Will federal legislation waiving Section 230 immunity with regard to the use of generative artificial intelligence (AI) become law before 12 January 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.0132,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/3131",
+      "question": "Will the US Federal Aviation Administration (FAA) authorize SpaceX to launch a third flight of Starship Super Heavy before 1 January 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.1431,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.12,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19621/",
+      "question": "Will Braga win the 2023/2024 UEFA Champions League?",
+      "resolution": 0.0,
+      "community_prediction": 0.021,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19185/",
+      "question": "Will Hakeem Jeffries (D) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.052,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.05,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18133/",
+      "question": "Will an attempted replication of LK-99 superconductivity be published before August 4, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.382,
+      "pred_baseline": 0.99,
+      "pred_anchored": 0.45,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19188/",
+      "question": "Will Donald Trump (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.046,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18191/",
+      "question": "Will the Israeli High Court issue a ruling on the \"reasonableness\" law before October 1, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.133,
+      "pred_baseline": 0.25,
+      "pred_anchored": 0.15,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17934/",
+      "question": "Will England win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.469,
+      "pred_baseline": 0.12,
+      "pred_anchored": 0.18,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19155/",
+      "question": "Will Philadelphia Phillies win the 2023 World Series?",
+      "resolution": 0.0,
+      "community_prediction": 0.302,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17949/",
+      "question": "Will Argentina win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.011,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19163/",
+      "question": "Will Minnesota Twins win the 2023 World Series?",
+      "resolution": 0.0,
+      "community_prediction": 0.101,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19765/",
+      "question": "Will Donald Trump spend at least one hour confined in a jail cell before January 1, 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.051,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.03,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/2981",
+      "question": "Will the US civilian labor force participation rate be higher in December 2023 than it was in October 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.8182,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.78,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19140/",
+      "question": "Will Laphonza Butler (D) the Governor of California appoint to replace Sen. Dianne Feinstein?",
+      "resolution": 1.0,
+      "community_prediction": 0.475,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.35,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17533/",
+      "question": "Will Tesla's market cap be greater than $1 trillion before July 1, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.023,
+      "pred_baseline": 0.99,
+      "pred_anchored": 0.03,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19120/",
+      "question": "Will Rep. Maxine Waters (D) the Governor of California appoint to replace Sen. Dianne Feinstein?",
+      "resolution": 0.0,
+      "community_prediction": 0.144,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.05,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19137/",
+      "question": "Will Angela Glover Blackwell (D) the Governor of California appoint to replace Sen. Dianne Feinstein?",
+      "resolution": 0.0,
+      "community_prediction": 0.137,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.05,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17924/",
+      "question": "Will Philippines win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.049,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18690/",
+      "question": "Will the Black Sea grain deal be revived before October 1, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.056,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.07,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20045/",
+      "question": "Will OpenAI have fewer than the following numbers of employees before January 1, 2024? (\u2264 100)",
+      "resolution": 0.0,
+      "community_prediction": 0.035,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17943/",
+      "question": "Will Jamaica win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.01,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17922/",
+      "question": "Will New Zealand win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.014,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18442/",
+      "question": "Will Christian Zurita win Ecuador\u2019s 2023 presidential election?",
+      "resolution": 0.0,
+      "community_prediction": 0.058,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.06,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18331/",
+      "question": "Will Cincinnati Bengals advance to the divisional round of the 2024 NFL playoffs?",
+      "resolution": 0.0,
+      "community_prediction": 0.309,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.28,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17950/",
+      "question": "Will Germany win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.145,
+      "pred_baseline": 0.1,
+      "pred_anchored": 0.13,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19138/",
+      "question": "Will Lateefah Simon (D) the Governor of California appoint to replace Sen. Dianne Feinstein?",
+      "resolution": 0.0,
+      "community_prediction": 0.059,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.05,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/2909",
+      "question": "Will the International Longshore and Warehouse Union (ILWU) vote to approve a new collective bargaining agreement with the Pacific Maritime Association (PMA) before 1 October 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.654,
+      "pred_baseline": 0.7,
+      "pred_anchored": 0.7,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20054/",
+      "question": "Will OpenAI have fewer than the following numbers of employees before January 1, 2024? (\u2264 600)",
+      "resolution": 0.0,
+      "community_prediction": 0.072,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.08,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17937/",
+      "question": "Will China win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.016,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19159/",
+      "question": "Will Tampa Bay Rays win the 2023 World Series?",
+      "resolution": 0.0,
+      "community_prediction": 0.064,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.06,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20043/",
+      "question": "Will the majority of OpenAI's Board of Directors leave the Board before December 1, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.865,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.92,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19467/",
+      "question": "Will Western institutions determine Israel was responsible for the attack on the Al-Ahli Baptist Hospital in Gaza City before 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.046,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.06,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19297/",
+      "question": "Will the Conservatives hold on to their seat in the Mid Bedfordshire by-election?",
+      "resolution": 0.0,
+      "community_prediction": 0.492,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.42,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19308/",
+      "question": "Will Hamas lose control of Gaza before 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.24,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.18,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17469/",
+      "question": "Will Reddit announce changes or a delay to its proposed API fee pricing before July 1, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.075,
+      "pred_baseline": 0.2,
+      "pred_anchored": 0.1,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17939/",
+      "question": "Will Vietnam win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.008,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19406/",
+      "question": "Will Sarah Bernstein or Chetna Maroo win the 2023 Booker Prize?",
+      "resolution": 0.0,
+      "community_prediction": 0.308,
+      "pred_baseline": 0.22,
+      "pred_anchored": 0.3,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17370/",
+      "question": "Will either the NBA Finals or the Stanley Cup Finals in 2023 go to a game 7?",
+      "resolution": 0.0,
+      "community_prediction": 0.171,
+      "pred_baseline": 0.32,
+      "pred_anchored": 0.18,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19375/",
+      "question": "Will there be 400 or more deaths due to armed conflict between Israel and Hezbollah before 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.303,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.12,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18069/",
+      "question": "Will the extent of Antarctic sea ice for every day in September 2023 be the lowest in recorded history?",
+      "resolution": 1.0,
+      "community_prediction": 0.904,
+      "pred_baseline": 0.99,
+      "pred_anchored": 0.98,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18340/",
+      "question": "Will Las Vegas Raiders advance to the divisional round of the 2024 NFL playoffs?",
+      "resolution": 0.0,
+      "community_prediction": 0.042,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.04,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20006/",
+      "question": "Will Satya Nadella be the next non-interim CEO of OpenAI?",
+      "resolution": 0.0,
+      "community_prediction": 0.023,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.02,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/2933",
+      "question": "Will the US civilian unemployment rate (U3) for July 2023 be greater than 3.6%?",
+      "resolution": 0.0,
+      "community_prediction": 0.237,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.22,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17935/",
+      "question": "Will Haiti win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.007,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19096/",
+      "question": "Will BBB win the most seats in the Dutch parliamentary elections of 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.048,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.04,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/3053",
+      "question": "Will the United States publicly acknowledge that it has executed a military strike within the territory of the Gaza Strip, Lebanon, or the West Bank before 30 October 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.0513,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.04,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19596/",
+      "question": "Will Sevilla win the 2023/2024 UEFA Champions League?",
+      "resolution": 0.0,
+      "community_prediction": 0.044,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.03,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19525/",
+      "question": "Will George Weah win re-election in the 2023 Liberian General Election?",
+      "resolution": 0.0,
+      "community_prediction": 0.599,
+      "pred_baseline": 0.45,
+      "pred_anchored": 0.45,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19142/",
+      "question": "Will Justice Leondra Kruger (D) the Governor of California appoint to replace Sen. Dianne Feinstein?",
+      "resolution": 0.0,
+      "community_prediction": 0.083,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.07,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18540/",
+      "question": "Will Myriam Bregman win the 2023 Argentine presidential election?",
+      "resolution": 0.0,
+      "community_prediction": 0.039,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/3045",
+      "question": "Will the jury find Sam Bankman-Fried guilty of any federal crime in his trial that began on 3 October 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.9235,
+      "pred_baseline": 0.99,
+      "pred_anchored": 0.95,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19139/",
+      "question": "Will Mayor London Breed (D) the Governor of California appoint to replace Sen. Dianne Feinstein?",
+      "resolution": 0.0,
+      "community_prediction": 0.073,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18397/",
+      "question": "Will Daniel Noboa Az\u00edn win Ecuador\u2019s 2023 presidential election?",
+      "resolution": 1.0,
+      "community_prediction": 0.507,
+      "pred_baseline": 0.7,
+      "pred_anchored": 0.52,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17793/",
+      "question": "Will Crook Manifesto by Colson Whitehead be on the August 13th New York Times Bestseller List?",
+      "resolution": 1.0,
+      "community_prediction": 0.801,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.85,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17948/",
+      "question": "Will Italy win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.023,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20383/",
+      "question": "Will the German Train Drivers' Union (GDL) go on strike again before January 1, 2024?",
+      "resolution": 1.0,
+      "community_prediction": 0.774,
+      "pred_baseline": 0.65,
+      "pred_anchored": 0.72,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20739/",
+      "question": "Will there be a US military combat death in the Red Sea before 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.042,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.04,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19189/",
+      "question": "Will Byron Donalds (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.044,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.05,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19094/",
+      "question": "Will VVD win the most seats in the Dutch parliamentary elections of 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.397,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.35,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18693/",
+      "question": "Will Donald Trump participate in the 2nd Republican primary debate?",
+      "resolution": 0.0,
+      "community_prediction": 0.051,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.06,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19598/",
+      "question": "Will Manchester United win the 2023/2024 UEFA Champions League?",
+      "resolution": 0.0,
+      "community_prediction": 0.019,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19190/",
+      "question": "Will Fred Upton (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.035,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19100/",
+      "question": "Will CDA win the most seats in the Dutch parliamentary elections of 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.061,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18351/",
+      "question": "Will Carolina Panthers advance to the divisional round of the 2024 NFL playoffs?",
+      "resolution": 0.0,
+      "community_prediction": 0.033,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19613/",
+      "question": "Will Benfica win the 2023/2024 UEFA Champions League?",
+      "resolution": 0.0,
+      "community_prediction": 0.044,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.04,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19593/",
+      "question": "Will Mike Johnson remain Speaker until 2024?",
+      "resolution": 1.0,
+      "community_prediction": 0.948,
+      "pred_baseline": 0.93,
+      "pred_anchored": 0.94,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18231/",
+      "question": "Will Donald Trump participate in the first Republican presidential debate?",
+      "resolution": 0.0,
+      "community_prediction": 0.117,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.1,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/2967",
+      "question": "Will any territory in Crimea that was Russian-controlled before 24 February 2022 cease to be under \"Assessed Russian Control\" before 15 December 2023, according to the Institute for the Study of War (",
+      "resolution": 0.0,
+      "community_prediction": 0.01,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19361/",
+      "question": "Will Hong Kong Chief Executive John Lee be invited to the APEC summit in November 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.27,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.15,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18614/",
+      "question": "Will General Brice Oligui Nguema be the de facto leader of Gabon on September 30, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.963,
+      "pred_baseline": 0.95,
+      "pred_anchored": 0.97,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18539/",
+      "question": "Will Juan Schiaretti win the 2023 Argentine presidential election?",
+      "resolution": 0.0,
+      "community_prediction": 0.04,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20275/",
+      "question": "Will Biden's 538 approval rating be above the following values on the following days? (2023 Dec 31st, \u2265 40%)",
+      "resolution": 0.0,
+      "community_prediction": 0.28,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.27,
+      "category": ""
+    },
+    {
+      "id": "https://www.infer-pub.com/questions/1280",
+      "question": "Will a new song with AI-generated vocals be streamed over 10 million times on Spotify before 1 June 2024?",
+      "resolution": 1.0,
+      "community_prediction": 0.7055,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.18,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17660/",
+      "question": "Will a mandatory evacuation order be issued for any area of Virginia related to any tropical cyclone in 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.173,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.12,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17914/",
+      "question": "Will the Chandrayaan-3 lander soft-land on the moon?",
+      "resolution": 1.0,
+      "community_prediction": 0.703,
+      "pred_baseline": 0.75,
+      "pred_anchored": 0.75,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19129/",
+      "question": "Will Former Senator Barbara Boxer (D) the Governor of California appoint to replace Sen. Dianne Feinstein?",
+      "resolution": 0.0,
+      "community_prediction": 0.048,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20218/",
+      "question": "Will there be a white Christmas in at least 4 of these 9 large European cities in 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.286,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.27,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20002/",
+      "question": "Will Ilya Sutskever be the next non-interim CEO of OpenAI?",
+      "resolution": 0.0,
+      "community_prediction": 0.038,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.04,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18350/",
+      "question": "Will Atlanta Falcons advance to the divisional round of the 2024 NFL playoffs?",
+      "resolution": 0.0,
+      "community_prediction": 0.059,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.07,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19117/",
+      "question": "Will Rep. Adam Schiff (D) the Governor of California appoint to replace Sen. Dianne Feinstein?",
+      "resolution": 0.0,
+      "community_prediction": 0.076,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19590/",
+      "question": "Will New Delhi experience a \"Very Unhealthy\" or worse air quality index on at least four of the seven days for the week starting October 29?",
+      "resolution": 1.0,
+      "community_prediction": 0.951,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.93,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20560/",
+      "question": "Will the US Supreme Court issue a decision on hearing the case about presidential immunity before January 1, 2024?",
+      "resolution": 1.0,
+      "community_prediction": 0.456,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.55,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19700/",
+      "question": "Will there be an additional Russian IPO on the MICEX in 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.755,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.82,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19180/",
+      "question": "Will Jim Jordan (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.229,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.18,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20213/",
+      "question": "Will Venezuela invade Guyana before these dates? (2024)",
+      "resolution": 0.0,
+      "community_prediction": 0.072,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.06,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/2920",
+      "question": "Will North Korea successfully put a satellite into orbit before 23 September 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.0031,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17945/",
+      "question": "Will Panama win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.011,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18860/",
+      "question": "Will Stepanakert / Khankendi be under de facto Azerbaijani control on September 30, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.905,
+      "pred_baseline": 0.95,
+      "pred_anchored": 0.97,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17324/",
+      "question": "Will internationally recognized media outlets report that a significant Ukrainian military counteroffensive has begun before June 21, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.876,
+      "pred_baseline": 0.95,
+      "pred_anchored": 0.92,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17701/",
+      "question": "Will General Sergei Surovikin be stripped of his command by July 11th?",
+      "resolution": 0.0,
+      "community_prediction": 0.058,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.12,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19336/",
+      "question": "Will Israeli forces reach the Palestinian Legislative Council building in Gaza before the listed dates? (November 7, 2023)",
+      "resolution": 0.0,
+      "community_prediction": 0.186,
+      "pred_baseline": 0.95,
+      "pred_anchored": 0.15,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19592/",
+      "question": "Will India request that another Canadian diplomat be recalled before 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.069,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.08,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19394/",
+      "question": "Will Azerbaijan invade Armenia before these dates? (2024)",
+      "resolution": 0.0,
+      "community_prediction": 0.058,
+      "pred_baseline": 0.5,
+      "pred_anchored": 0.07,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18181/",
+      "question": "Will ECOWAS launch a military intervention in Niger before August 12, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.1,
+      "pred_baseline": 0.25,
+      "pred_anchored": 0.12,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19186/",
+      "question": "Will Don Bacon (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.037,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17989/",
+      "question": "Will the 'Ending Agricultural Trade Suppression' Act pass in the US House of Representatives by January 3, 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.217,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.1,
+      "category": ""
+    },
+    {
+      "id": "https://www.gjopen.com/questions/3062",
+      "question": "Will the Israeli Defense Forces (IDF) invade Lebanon with tanks and/or armored vehicles before 13 December 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.0317,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.04,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19183/",
+      "question": "Will Patrick McHenry (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.197,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.15,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20261/",
+      "question": "Will any additional Republican candidates for president drop out before 2024?",
+      "resolution": 1.0,
+      "community_prediction": 0.48,
+      "pred_baseline": 0.65,
+      "pred_anchored": 0.52,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17316/",
+      "question": "Will Ukraine retake Polohy by the 1st of October, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.096,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.08,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19333/",
+      "question": "Will Yahya Sinwar cease to act as Hamas Chief in the Gaza Strip before 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.255,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.18,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18607/",
+      "question": "Will Chevron reach an agreement with the Offshore Alliance to end or prevent industrial actions before September 25, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.453,
+      "pred_baseline": 0.65,
+      "pred_anchored": 0.55,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17926/",
+      "question": "Will Australia win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.172,
+      "pred_baseline": 0.06,
+      "pred_anchored": 0.12,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18609/",
+      "question": "Will France send their military to intervene in the Gabonese coup in 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.025,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.03,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17655/",
+      "question": "Will the Palestinian Authority declare itself bankrupt before the end of 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.069,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.08,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17995/",
+      "question": "Will a Navy ship be captured, scuttled, sunk, or critically damaged in the Black Sea before 2025?",
+      "resolution": 1.0,
+      "community_prediction": 0.809,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.78,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19122/",
+      "question": "Will Rep. Sydney Kamlager-Dove (D) the Governor of California appoint to replace Sen. Dianne Feinstein?",
+      "resolution": 0.0,
+      "community_prediction": 0.106,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.1,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17931/",
+      "question": "Will Costa Rica win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.012,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19909/",
+      "question": "Will Volodymyr Zelenskyy visit Israel before 2024?",
+      "resolution": 0.0,
+      "community_prediction": 0.151,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.12,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18329/",
+      "question": "Will New York Jets advance to the divisional round of the 2024 NFL playoffs?",
+      "resolution": 0.0,
+      "community_prediction": 0.13,
+      "pred_baseline": 0.22,
+      "pred_anchored": 0.14,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20003/",
+      "question": "Will Sam Altman be the next non-interim CEO of OpenAI?",
+      "resolution": 1.0,
+      "community_prediction": 0.798,
+      "pred_baseline": 0.7,
+      "pred_anchored": 0.85,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18696/",
+      "question": "Will the US pass the Unidentified Anomalous Phenomena (UAP) Disclosure Act of 2023 before October 1, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.085,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.08,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19618/",
+      "question": "Will Galatasaray win the 2023/2024 UEFA Champions League?",
+      "resolution": 0.0,
+      "community_prediction": 0.03,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.02,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19130/",
+      "question": "Will Hunter Biden (D) the Governor of California appoint to replace Sen. Dianne Feinstein?",
+      "resolution": 0.0,
+      "community_prediction": 0.004,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18102/",
+      "question": "Will the oil transfer from the FSO Safer finish in 19 days?",
+      "resolution": 1.0,
+      "community_prediction": 0.905,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.92,
+      "category": ""
+    },
+    {
+      "id": "https://www.infer-pub.com/questions/1336",
+      "question": "Will Israel and Hamas agree to a ceasefire in the next month?",
+      "resolution": 1.0,
+      "community_prediction": 0.6618,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.35,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17328/",
+      "question": "Will Lionel Messi next join Al-Hilal Saudi Football Club as a club player?",
+      "resolution": 0.0,
+      "community_prediction": 0.01,
+      "pred_baseline": 0.02,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19141/",
+      "question": "Will Malia Cohen (D) the Governor of California appoint to replace Sen. Dianne Feinstein?",
+      "resolution": 0.0,
+      "community_prediction": 0.054,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.04,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20063/",
+      "question": "Will the November 2023 Israel-Hamas humanitarian pause be extended?",
+      "resolution": 1.0,
+      "community_prediction": 0.837,
+      "pred_baseline": 0.7,
+      "pred_anchored": 0.82,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18059/",
+      "question": "Will a US warship enter the Black Sea before September 25, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.021,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17942/",
+      "question": "Will France win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.114,
+      "pred_baseline": 0.08,
+      "pred_anchored": 0.1,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19612/",
+      "question": "Will Lens win the 2023/2024 UEFA Champions League?",
+      "resolution": 0.0,
+      "community_prediction": 0.044,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.infer-pub.com/questions/1336",
+      "question": "Will Israel and Hamas agree to a ceasefire in the next month?",
+      "resolution": 1.0,
+      "community_prediction": 0.6618,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.35,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17554/",
+      "question": "Will the Black Sea grain deal be extended before July 19, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.343,
+      "pred_baseline": 0.3,
+      "pred_anchored": 0.3,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17569/",
+      "question": "Will Yevgeny Prigozhin be the functional leader of the Wagner Group on June 30, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.837,
+      "pred_baseline": 0.2,
+      "pred_anchored": 0.7,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18537/",
+      "question": "Will Sergio Massa win the 2023 Argentine presidential election?",
+      "resolution": 0.0,
+      "community_prediction": 0.502,
+      "pred_baseline": 0.25,
+      "pred_anchored": 0.25,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17530/",
+      "question": "Will Meta's Voicebox model be leaked by July 1, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.092,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.1,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17767/",
+      "question": "Will the Russian Luna-25 mission reach Earth's orbit before September 2, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.737,
+      "pred_baseline": 0.99,
+      "pred_anchored": 0.75,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18680/",
+      "question": "Will the United Auto Workers call a strike against any of the Big Three Detroit automakers before September 19, 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.717,
+      "pred_baseline": 0.85,
+      "pred_anchored": 0.8,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18530/",
+      "question": "Will Yevgeny V. Prigozhin be confirmed to be dead before November 2023?",
+      "resolution": 1.0,
+      "community_prediction": 0.968,
+      "pred_baseline": 0.95,
+      "pred_anchored": 0.98,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17923/",
+      "question": "Will Norway win the 2023 FIFA Women's World Cup?",
+      "resolution": 0.0,
+      "community_prediction": 0.015,
+      "pred_baseline": 0.03,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20568/",
+      "question": "Before 2024, will it be announced that either of the Harvard or MIT presidents will vacate their positions?",
+      "resolution": 0.0,
+      "community_prediction": 0.047,
+      "pred_baseline": 0.23,
+      "pred_anchored": 0.08,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19181/",
+      "question": "Will Andy Biggs (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 0.0,
+      "community_prediction": 0.034,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19443/",
+      "question": "Will Mike Johnson (R) be elected Speaker of the U.S. House of Representatives following Kevin McCarthy's removal?",
+      "resolution": 1.0,
+      "community_prediction": 0.431,
+      "pred_baseline": 0.99,
+      "pred_anchored": 0.85,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19764/",
+      "question": "Will the second Starship integrated flight test achieve liftoff before January 1, 2024?",
+      "resolution": 1.0,
+      "community_prediction": 0.845,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.35,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19626/",
+      "question": "Will Antwerp win the 2023/2024 UEFA Champions League?",
+      "resolution": 0.0,
+      "community_prediction": 0.06,
+      "pred_baseline": 0.01,
+      "pred_anchored": 0.01,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18330/",
+      "question": "Will Baltimore Ravens advance to the divisional round of the 2024 NFL playoffs?",
+      "resolution": 1.0,
+      "community_prediction": 0.634,
+      "pred_baseline": 0.99,
+      "pred_anchored": 0.72,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18311/",
+      "question": "Will Putin attend the G20 summit in India?",
+      "resolution": 0.0,
+      "community_prediction": 0.068,
+      "pred_baseline": 0.25,
+      "pred_anchored": 0.08,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18186/",
+      "question": "Will ECOWAS intervene militarily in Niger before October 1, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.123,
+      "pred_baseline": 0.18,
+      "pred_anchored": 0.13,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/17584/",
+      "question": "Will a nearly continuous human chain stretch across the length of the Forth and Clyde Canal on 14 October 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.305,
+      "pred_baseline": 0.15,
+      "pred_anchored": 0.25,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18192/",
+      "question": "Will the Israeli High Court uphold the \"reasonableness\" law?",
+      "resolution": 0.0,
+      "community_prediction": 0.237,
+      "pred_baseline": 0.35,
+      "pred_anchored": 0.22,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/19161/",
+      "question": "Will Texas Rangers win the 2023 World Series?",
+      "resolution": 1.0,
+      "community_prediction": 0.626,
+      "pred_baseline": 0.99,
+      "pred_anchored": 0.99,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/20092/",
+      "question": "Will a novel pathogen be identified as responsible for the pneumonia reported in Beijing or Liaoning before December 15, 2023?",
+      "resolution": 0.0,
+      "community_prediction": 0.032,
+      "pred_baseline": 0.05,
+      "pred_anchored": 0.03,
+      "category": ""
+    },
+    {
+      "id": "https://www.metaculus.com/api2/questions/18179/",
+      "question": "Will PEPFAR be extended before it expires on September 30th, 2023? (Short-Term Extension (Less Than Five Years))",
+      "resolution": 0.0,
+      "community_prediction": 0.322,
+      "pred_baseline": 0.3,
+      "pred_anchored": 0.35,
+      "category": ""
+    }
+  ],
+  "metrics": {
+    "brier_baseline": 0.0842675,
+    "brier_anchored": 0.05969200000000001,
+    "ece_baseline": 0.06535,
+    "ece_anchored": 0.0818,
+    "brier_community": 0.057901553050000006,
+    "ece_community": 0.1025425,
+    "brier_naive": 0.25
+  }
+}

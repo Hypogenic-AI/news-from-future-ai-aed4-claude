@@ -1,0 +1,10 @@
+PDF: /workspaces/news-from-future-ai-aed4-claude/papers/sun2025_prophet_future_forecasting.pdf
+Total pages: 14
+Pages per chunk: 3
+
+Chunks:
+  sun2025_prophet_future_forecasting_chunk_001.pdf: pages 1-3
+  sun2025_prophet_future_forecasting_chunk_002.pdf: pages 4-6
+  sun2025_prophet_future_forecasting_chunk_003.pdf: pages 7-9
+  sun2025_prophet_future_forecasting_chunk_004.pdf: pages 10-12
+  sun2025_prophet_future_forecasting_chunk_005.pdf: pages 13-14

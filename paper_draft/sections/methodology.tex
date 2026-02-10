@@ -1,0 +1,70 @@
+\section{Methodology}
+\label{sec:methodology}
+
+We describe the \futurenews pipeline in three stages: probability estimation (\secref{sec:forecasting}), article generation (\secref{sec:generation}), and evaluation protocol (\secref{sec:evaluation}).
+
+\subsection{Forecasting with Market Anchoring}
+\label{sec:forecasting}
+
+Given a binary forecasting question $q$ with background context $c$ and an optional market probability $p_m \in [0,1]$, we prompt \gptfour to produce a probability estimate $\hat{p}$.
+
+\para{Unanchored baseline.} The model receives the question and context only:
+\begin{equation}
+    \hat{p}_{\text{base}} = f_{\text{LLM}}(q, c)
+    \label{eq:baseline}
+\end{equation}
+where $f_{\text{LLM}}$ denotes the language model prompted at temperature 0.1 to return a single probability value.
+
+\para{Market-anchored forecast.} When a market probability $p_m$ is available, we include it in the prompt as reference information. The model is instructed to consider the market price but form its own judgment:
+\begin{equation}
+    \hat{p}_{\text{llm}} = f_{\text{LLM}}(q, c, p_m)
+    \label{eq:anchored_llm}
+\end{equation}
+The final anchored probability is a weighted combination:
+\begin{equation}
+    \hat{p}_{\text{anchor}} = \alpha \cdot p_m + (1 - \alpha) \cdot \hat{p}_{\text{llm}}
+    \label{eq:anchored}
+\end{equation}
+with $\alpha = 0.6$, weighting the market more heavily based on the finding that prediction markets typically outperform individual LLM forecasts~\citep{schoenegger2024wisdom, shahabi2026truthtensor}.
+
+\subsection{Probability-Conditioned Article Generation}
+\label{sec:generation}
+
+Given a question $q$ and a probability estimate $\hat{p}$, the article generation module produces a news-style article $a$ whose framing reflects the estimated likelihood:
+
+\begin{equation}
+    a = g_{\text{LLM}}(q, c, \hat{p}, s(\hat{p}))
+    \label{eq:generation}
+\end{equation}
+where $s(\hat{p})$ is a style directive derived from the probability level. We define three hedging regimes:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+    \item \textbf{Confident} ($\hat{p} > 0.85$ or $\hat{p} < 0.15$): The article narrates the expected outcome as the primary scenario, noting residual uncertainty only briefly.
+    \item \textbf{Likely} ($0.60 \leq \hat{p} \leq 0.85$ or $0.15 \leq \hat{p} \leq 0.40$): The article leads with the more probable outcome while explicitly acknowledging meaningful uncertainty.
+    \item \textbf{Uncertain} ($0.40 < \hat{p} < 0.60$): The article frames the situation as genuinely uncertain, presenting both outcomes as plausible and avoiding a definitive narrative.
+\end{itemize}
+Articles are generated at temperature 0.7 with a maximum length of 800--1000 tokens to encourage natural variation while maintaining coherence.
+
+\subsection{Datasets}
+\label{sec:datasets}
+
+We evaluate on four data sources spanning historical benchmarks and live markets:
+
+\para{Halawi forecasting benchmark.} We sample 200 binary questions from the test set of~\citet{halawi2024approaching} (originally 914 test, 317 binary), which includes questions from \metaculus, GJOpen, and INFER with community predictions and known resolutions from 2023. This dataset provides ground-truth outcomes and crowd probability baselines, enabling both accuracy measurement and anchoring experiments.
+
+\para{KalshiBench.} We sample 200 binary questions from \kalshibench~\citep{smith2025kalshibench}, which contains 1,531 questions from the CFTC-regulated Kalshi exchange across 16 categories. Crucially, this dataset does \emph{not} include market probabilities, allowing us to evaluate unanchored LLM forecasting on questions with resolutions from 2025.
+
+\para{Live prediction markets.} We fetch 15 questions each from the \metaculus API (\texttt{/api2/questions/}) and \polymarket API (\texttt{gamma-api.polymarket.com/events}), selecting currently open binary questions. These provide real-time market probabilities for the end-to-end pipeline demonstration.
+
+\subsection{Evaluation Protocol}
+\label{sec:evaluation}
+
+\para{Experiment 1: Forecasting accuracy ($n{=}400$).}
+For each question in both datasets, we generate forecasts under the unanchored (Eq.~\ref{eq:baseline}) and anchored (Eq.~\ref{eq:anchored}) conditions. We measure Brier score ($\brier = \frac{1}{N}\sum_{i=1}^{N}(\hat{p}_i - y_i)^2$, where $y_i \in \{0,1\}$ is the resolution), expected calibration error ($\ece$), and report bootstrap 95\% confidence intervals. We use paired $t$-tests for condition comparisons.
+
+\para{Experiment 2: Article quality ($n{=}50$).}
+We select 50 questions stratified by probability range and dataset. For each, we generate articles under anchored and unanchored conditions, yielding 100 articles total. A \gptfour judge evaluates each article on five dimensions (1--5 scale): \emph{plausibility}, \emph{coherence}, \emph{informativeness}, \emph{uncertainty handling}, and \emph{news style}. We report means, standard deviations, and paired $t$-test $p$-values.
+
+\para{Experiment 3: Live pipeline ($n{=}20$).}
+We run the full pipeline on 20 live questions from \metaculus and \polymarket, generating forecasts anchored to current market prices and producing articles evaluated by the same LLM judge. We also report the correlation between LLM forecasts and market prices.
+
+\para{Implementation details.} All experiments use \gptfour (\texttt{gpt-4.1}) with temperature 0.1 for forecasting and 0.7 for generation. Random seed is fixed at 42. Total API cost is approximately \$30 across ${\sim}$1,200 calls. Code is available in the supplementary material.

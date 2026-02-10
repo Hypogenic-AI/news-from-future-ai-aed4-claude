@@ -1,0 +1,125 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Experiment 1: Forecasting Accuracy}
+\label{sec:exp1}
+
+\para{Halawi benchmark.}
+\tabref{tab:forecasting_halawi} presents Brier scores on the \halawi dataset. Market-anchored \gptfour achieves a Brier score of 0.060, a 29.2\% improvement over the unanchored baseline (0.084). This difference is statistically significant (paired $t$-test: $t{=}2.058$, $p{=}0.041$, Cohen's $d{=}0.146$). The anchored model nearly matches the human crowd aggregate (0.058), confirming that market prices provide effective calibration for LLM forecasts.
+
+\begin{table}[t]
+    \caption{Brier scores on the \halawi forecasting benchmark ($n{=}200$). Lower is better. The \naive baseline always predicts 0.5. Bootstrap 95\% confidence intervals are in brackets. Best model result in \textbf{bold}.}
+    \label{tab:forecasting_halawi}
+    \centering
+    \begin{tabular}{@{}lccc@{}}
+        \toprule
+        Method & Brier Score & 95\% CI & $\ece$ \\
+        \midrule
+        \naive (always 0.5) & 0.250 & --- & --- \\
+        \gptfour (\unanchored) & 0.084 & [0.058, 0.112] & 0.065 \\
+        \gptfour (\anchored) & \textbf{0.060} & [0.042, 0.079] & 0.082 \\
+        \midrule
+        Human crowd & 0.058 & --- & 0.103 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\para{KalshiBench.}
+\tabref{tab:forecasting_kalshi} shows results on \kalshibench, where no market probabilities are available. Without anchoring, \gptfour achieves a Brier score of 0.254---effectively equivalent to the \naive baseline (0.250). Adding chain-of-thought (CoT) reasoning yields only marginal improvement (0.249, $p{=}0.402$). This confirms prior findings~\citep{smith2025kalshibench} that LLMs struggle to forecast without external calibration data and underscores the necessity of market anchoring.
+
+\begin{table}[t]
+    \caption{Brier scores on \kalshibench ($n{=}200$). Without market probabilities, \gptfour performs near the chance baseline.}
+    \label{tab:forecasting_kalshi}
+    \centering
+    \begin{tabular}{@{}lccc@{}}
+        \toprule
+        Method & Brier Score & 95\% CI & $\ece$ \\
+        \midrule
+        \naive (always 0.5) & 0.250 & --- & --- \\
+        \gptfour (baseline) & 0.254 & [0.213, 0.300] & 0.190 \\
+        \gptfour (+ CoT) & 0.249 & [0.209, 0.292] & 0.207 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Experiment 2: Article Generation Quality}
+\label{sec:exp2}
+
+\tabref{tab:article_quality} compares article quality between anchored and unanchored conditions across five dimensions. Both conditions produce high-quality articles, with all scores exceeding 4.0 out of 5.0. The key finding is a large, significant advantage for anchored articles on \emph{uncertainty handling} (5.00 vs.\ 4.48, $p{<}0.001$, Cohen's $d{=}0.77$). Unanchored articles score slightly higher on \emph{informativeness} (4.60 vs.\ 4.28, $p{<}0.001$), likely because they write more confidently without hedging constraints, which an LLM judge may reward with higher informativeness scores.
+
+\begin{table}[t]
+    \caption{Article quality scores (1--5 scale, higher is better) across five dimensions ($n{=}50$ paired articles). Significant differences ($p{<}0.05$) marked with $*$.}
+    \label{tab:article_quality}
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}lccccc@{}}
+        \toprule
+        Dimension & \anchored (mean $\pm$ sd) & \unanchored (mean $\pm$ sd) & $\Delta$ & $p$-value & Cohen's $d$ \\
+        \midrule
+        Plausibility & 4.94 $\pm$ 0.31 & 5.00 $\pm$ 0.00 & $-$0.06 & 0.182 & 0.27 \\
+        Coherence & 5.00 $\pm$ 0.00 & 5.00 $\pm$ 0.00 & 0.00 & --- & --- \\
+        Informativeness & 4.28 $\pm$ 0.45 & 4.60 $\pm$ 0.49 & $-$0.32$^*$ & $<$0.001 & 0.68 \\
+        Uncertainty handling & \textbf{5.00 $\pm$ 0.00} & 4.48 $\pm$ 0.88 & $+$0.52$^*$ & $<$0.001 & 0.77 \\
+        News style & 4.94 $\pm$ 0.24 & 4.98 $\pm$ 0.14 & $-$0.04 & 0.322 & 0.20 \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+Plausibility, coherence, and news style show no significant differences, indicating that anchoring does not degrade baseline writing quality. All dimensions exceed the 3.5/5.0 target threshold by a wide margin.
+
+\subsection{Experiment 3: Live Pipeline}
+\label{sec:exp3}
+
+\tabref{tab:live_pipeline} summarizes the live pipeline results. The system successfully processed 20 questions from \metaculus and \polymarket. The LLM's independent forecasts correlate strongly with market prices ($r{=}0.903$), with a mean absolute deviation of only 8.7 percentage points. All generated articles meet quality thresholds, scoring 4.90--5.00 across dimensions.
+
+\begin{table}[t]
+    \caption{Live pipeline results ($n{=}20$). LLM--market correlation and article quality on real-time prediction market questions.}
+    \label{tab:live_pipeline}
+    \centering
+    \begin{tabular}{@{}lc@{}}
+        \toprule
+        Metric & Value \\
+        \midrule
+        Questions processed & 20 \\
+        Mean market probability & 30.8\% \\
+        Mean LLM forecast & 24.2\% \\
+        Mean $|\text{LLM} - \text{Market}|$ & 0.087 \\
+        LLM--market correlation ($r$) & \textbf{0.903} \\
+        \midrule
+        Plausibility & 5.00 $\pm$ 0.00 \\
+        Coherence & 5.00 $\pm$ 0.00 \\
+        Informativeness & 4.90 $\pm$ 0.30 \\
+        Uncertainty handling & 4.90 $\pm$ 0.30 \\
+        News style & 5.00 $\pm$ 0.00 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\para{Sample output.} The following excerpt illustrates a generated article for a low-probability question ($\hat{p}{=}0.04$):
+
+\begin{quote}
+\small
+\emph{``Trump Unlikely to Tap Waller for Fed Chair, Forecasters Say} --- Despite speculation surrounding key appointments in a potential second Trump administration, prediction markets and expert forecasters are nearly unanimous: Christopher Waller is not expected to receive the formal nomination for Chair of the Federal Reserve\ldots''
+\end{quote}
+
+\noindent The article adopts appropriately skeptical framing (``unlikely,'' ``not expected'') consistent with the low probability estimate, illustrating the pipeline's ability to calibrate narrative tone to forecasted uncertainty.
+
+\subsection{Hypothesis Testing Summary}
+
+\tabref{tab:hypotheses} summarizes the results for all three pre-registered hypotheses.
+
+\begin{table}[t]
+    \caption{Pre-registered hypothesis outcomes.}
+    \label{tab:hypotheses}
+    \centering
+    \begin{tabular}{@{}lll@{}}
+        \toprule
+        Hypothesis & Result & Key Evidence \\
+        \midrule
+        H1: Anchoring improves Brier scores & Supported & 29.2\% improvement, $p{=}0.041$ \\
+        H2: Articles exceed 3.5/5 quality & Strongly supported & All dimensions 4.28--5.00 \\
+        H3: Anchoring improves uncertainty handling & Supported & $+$0.52, $p{<}0.001$, $d{=}0.77$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}

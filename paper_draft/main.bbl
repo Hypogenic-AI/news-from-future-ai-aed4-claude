@@ -1,0 +1,87 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arrow et~al.(2008)Arrow, Forsythe, Gorham, Hahn, Hanson, Ledyard,
+  Levmore, Litan, Milgrom, Nelson, et~al.]{arrow2008promise}
+Kenneth~J. Arrow, Robert Forsythe, Michael Gorham, Robert Hahn, Robin Hanson,
+  John~O. Ledyard, Saul Levmore, Robert Litan, Paul Milgrom, Forrest~D. Nelson,
+  et~al.
+\newblock The promise of prediction markets.
+\newblock \emph{Science}, 320\penalty0 (5878):\penalty0 877--878, 2008.
+
+\bibitem[Halawi et~al.(2024)Halawi, Zhang, Yueh-Han, and
+  Steinhardt]{halawi2024approaching}
+Danny Halawi, Fred Zhang, Chen Yueh-Han, and Jacob Steinhardt.
+\newblock Approaching human-level forecasting with language models.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~37, 2024.
+
+\bibitem[Huertas et~al.(2024)]{huertas2024news}
+Pedro Huertas et~al.
+\newblock News generation with large language models.
+\newblock \emph{arXiv preprint}, 2024.
+
+\bibitem[Jain and Flanigan(2024)]{jain2024future}
+Changmao Jain and Jeffrey Flanigan.
+\newblock Future language modeling from temporal document history.
+\newblock In \emph{International Conference on Learning Representations}, 2024.
+
+\bibitem[Karger et~al.(2025)Karger, Bastani, Chen, Goldstein, Halawi, Herzberg,
+  and Tetlock]{karger2024forecastbench}
+Ezra Karger, Horace Bastani, Chen Chen, Joshua Goldstein, Danny Halawi, Daniel
+  Herzberg, and Philip~E. Tetlock.
+\newblock {ForecastBench}: A dynamic benchmark of {AI} forecasting
+  capabilities.
+\newblock In \emph{International Conference on Learning Representations}, 2025.
+
+\bibitem[Schoenegger et~al.(2024)Schoenegger, Park, Karger, and
+  Tetlock]{schoenegger2024wisdom}
+Philipp Schoenegger, Peter~S. Park, Ezra Karger, and Philip~E. Tetlock.
+\newblock Wisdom of the silicon crowd: {LLM} ensemble prediction capabilities
+  rival human crowd accuracy.
+\newblock \emph{Journal of Experimental Psychology: General}, 2024.
+
+\bibitem[Shahabi et~al.(2026)Shahabi, Graham, and Isah]{shahabi2026truthtensor}
+Saeed Shahabi, Scott Graham, and Haruna Isah.
+\newblock {TruthTensor}: Evaluating {LLMs} through human imitation on
+  prediction markets.
+\newblock \emph{arXiv preprint arXiv:2601.13545}, 2026.
+
+\bibitem[Smith(2025)]{smith2025kalshibench}
+Leslie~N. Smith.
+\newblock Do large language models know what they don't know? {E}valuating
+  epistemic calibration via prediction markets.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~37, 2025.
+
+\bibitem[Sun et~al.(2025)]{sun2025prophet}
+Zhaowei Sun et~al.
+\newblock {PROPHET}: Prompting large language models for future forecasting.
+\newblock \emph{arXiv preprint}, 2025.
+
+\bibitem[Turtel et~al.(2026)Turtel, Wilczewski, Franklin, and
+  Skothiem]{turtel2026future}
+Benjamin Turtel, Piotr Wilczewski, Daniel Franklin, and Knut Skothiem.
+\newblock Future-as-label: Scalable supervision from real-world outcomes.
+\newblock \emph{arXiv preprint arXiv:2601.06336}, 2026.
+
+\bibitem[Zheng et~al.(2023)Zheng, Chiang, Sheng, Zhuang, Wu, Zhuang, Lin, Li,
+  Li, Xing, et~al.]{zheng2023judging}
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao
+  Zhuang, Zi~Lin, Zhuohan Li, Dacheng Li, Eric Xing, et~al.
+\newblock Judging {LLM}-as-a-judge with {MT-Bench} and chatbot arena.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36, 2023.
+
+\bibitem[Zou et~al.(2022)Zou, Xiao, Jia, Kwon, Mazeika, Li, Song, Steinhardt,
+  Evans, and Hendrycks]{zou2022forecasting}
+Andy Zou, Tristan Xiao, Ryan Jia, Joe Kwon, Mantas Mazeika, Richard Li, Dawn
+  Song, Jacob Steinhardt, Owain Evans, and Dan Hendrycks.
+\newblock Forecasting future world events with neural networks.
+\newblock In \emph{Advances in Neural Information Processing Systems: Datasets
+  and Benchmarks Track}, 2022.
+
+\end{thebibliography}

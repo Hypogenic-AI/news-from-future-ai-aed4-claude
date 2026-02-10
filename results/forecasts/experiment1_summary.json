@@ -1,0 +1,18 @@
+{
+  "halawi_metrics": {
+    "brier_baseline": 0.0842675,
+    "brier_anchored": 0.05969200000000001,
+    "ece_baseline": 0.06535,
+    "ece_anchored": 0.0818,
+    "brier_community": 0.057901553050000006,
+    "ece_community": 0.1025425,
+    "brier_naive": 0.25
+  },
+  "kalshi_metrics": {
+    "brier_baseline": 0.2544805,
+    "brier_anchored": 0.2491335,
+    "ece_baseline": 0.19005000000000002,
+    "ece_anchored": 0.20684999999999998,
+    "brier_naive": 0.25
+  }
+}

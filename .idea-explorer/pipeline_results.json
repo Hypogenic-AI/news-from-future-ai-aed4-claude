@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "stages": {
+    "resource_finder": {
+      "success": true,
+      "completion_marker": "/workspaces/news-from-future-ai-aed4-claude/.resource_finder_complete",
+      "outputs": {
+        "literature_review": "/workspaces/news-from-future-ai-aed4-claude/literature_review.md",
+        "resources_catalog": "/workspaces/news-from-future-ai-aed4-claude/resources.md",
+        "papers_dir": "/workspaces/news-from-future-ai-aed4-claude/papers",
+        "datasets_dir": "/workspaces/news-from-future-ai-aed4-claude/datasets",
+        "code_dir": "/workspaces/news-from-future-ai-aed4-claude/code"
+      },
+      "log_file": "/workspaces/news-from-future-ai-aed4-claude/logs/resource_finder_claude.log",
+      "transcript_file": "/workspaces/news-from-future-ai-aed4-claude/logs/resource_finder_claude_transcript.jsonl",
+      "elapsed_time": 2044.868136882782
+    },
+    "experiment_runner": {
+      "success": true,
+      "return_code": 0,
+      "elapsed_time": 2582.928879261017,
+      "log_file": "/workspaces/news-from-future-ai-aed4-claude/logs/execution_claude.log",
+      "transcript_file": "/workspaces/news-from-future-ai-aed4-claude/logs/execution_claude_transcript.jsonl"
+    }
+  },
+  "work_dir": "/workspaces/news-from-future-ai-aed4-claude"
+}

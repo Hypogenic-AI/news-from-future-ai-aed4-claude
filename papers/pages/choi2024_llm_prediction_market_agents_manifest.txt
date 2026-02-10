@@ -1,0 +1,9 @@
+PDF: /workspaces/news-from-future-ai-aed4-claude/papers/choi2024_llm_prediction_market_agents.pdf
+Total pages: 11
+Pages per chunk: 3
+
+Chunks:
+  choi2024_llm_prediction_market_agents_chunk_001.pdf: pages 1-3
+  choi2024_llm_prediction_market_agents_chunk_002.pdf: pages 4-6
+  choi2024_llm_prediction_market_agents_chunk_003.pdf: pages 7-9
+  choi2024_llm_prediction_market_agents_chunk_004.pdf: pages 10-11

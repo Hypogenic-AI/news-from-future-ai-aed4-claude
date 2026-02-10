@@ -1,0 +1,18 @@
+Resource finding completed: 2026-02-10
+
+Topic: News from the Future
+Hypothesis: A website that combines large language models (LLMs) with prediction markets can generate plausible news articles about future events.
+Domain: Artificial Intelligence
+
+Summary of collected resources:
+- Papers: 23 downloaded (7 deep-read with detailed analysis)
+- Datasets: 3 downloaded (8,251 total forecasting questions), 5 additional identified
+- Code repositories: 10 cloned, 10 additional identified
+- Documentation: literature_review.md, resources.md, papers/README.md, datasets/README.md, code/README.md
+
+Key deliverables:
+- literature_review.md: Comprehensive review covering forecasting benchmarks, prediction markets, temporal text generation, and evaluation methods
+- resources.md: Complete catalog of all papers, datasets, code, APIs, and metrics
+- papers/README.md: Inventory of all 23 papers with metadata
+- datasets/README.md: Documentation of downloaded and available datasets
+- code/README.md: Documentation of cloned and relevant repositories

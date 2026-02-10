@@ -1,0 +1,44 @@
+\section{Implementation Details}
+\label{app:details}
+
+\para{Software.} All experiments use Python 3.12.8 with the following key libraries: OpenAI API client v2.18.0, NumPy 2.2.6, SciPy 1.17.0, Matplotlib 3.10.8, Seaborn 0.13.2, and Requests 2.32.5.
+
+\para{Compute.} Experiments run on CPU only (API-based workload). Total execution time is approximately 45 minutes. Estimated API cost is \$30 across ${\sim}$1,200 calls to the \gptfour API.
+
+\para{Prompting.} For forecasting, we prompt the model with the question text, background context, and (in the anchored condition) the community or market probability. The model returns a single float between 0.0 and 1.0. For article generation, the prompt includes the question, background, forecasted probability, hedging regime instructions, and a request to write a 300--500 word news article in Associated Press style.
+
+\para{Reproducibility.} All stochastic processes use random seed 42. Forecasting uses temperature 0.1; article generation uses temperature 0.7.
+
+\section{Broader Impact}
+\label{app:broader_impact}
+
+A system that generates plausible news articles about future events raises ethical concerns that must be addressed before deployment.
+
+\para{Potential for misuse.} Generated future news could be misused for market manipulation (creating false impressions of likely events to influence trading behavior), political influence (fabricating plausible-sounding articles about electoral outcomes), or general misinformation. The high quality scores in our evaluation (4.28--5.00 across dimensions) indicate that such articles could be difficult to distinguish from genuine reporting.
+
+\para{Mitigations.} We recommend that any deployed system include: (1)~prominent disclaimers indicating that articles describe \emph{probabilistically forecasted} events, not actual occurrences; (2)~machine-readable content provenance metadata following the C2PA standard; (3)~watermarking of generated text; and (4)~clear attribution to prediction market sources with links to the underlying probability estimates.
+
+\para{Positive applications.} Well-designed future news systems could serve as decision-support tools for policymakers, scenario planning aids for organizations, educational resources that make probabilistic thinking tangible, and accessibility tools that translate abstract probabilities into narrative form for non-technical audiences.
+
+\section{Additional Results}
+\label{app:additional}
+
+\para{Comparison to literature.} \tabref{tab:literature_comparison} compares our forecasting results with published benchmarks.
+
+\begin{table}[h]
+    \caption{Comparison of forecasting accuracy with prior work. Our anchored model achieves the lowest Brier score among LLM-based approaches.}
+    \label{tab:literature_comparison}
+    \centering
+    \begin{tabular}{@{}llc@{}}
+        \toprule
+        Method & Source & Brier Score \\
+        \midrule
+        GPT-4.5 & ForecastBench~\citep{karger2024forecastbench} & 0.101 \\
+        Superforecasters & ForecastBench~\citep{karger2024forecastbench} & 0.081 \\
+        Silicon crowd (12 LLMs) & \citet{schoenegger2024wisdom} & 0.200 \\
+        \gptfour (\unanchored) & This work & 0.084 \\
+        \gptfour (\anchored) & This work & \textbf{0.060} \\
+        Human crowd & \halawi benchmark & 0.058 \\
+        \bottomrule
+    \end{tabular}
+\end{table}

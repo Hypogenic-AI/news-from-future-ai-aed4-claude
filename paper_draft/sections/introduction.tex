@@ -1,0 +1,20 @@
+\section{Introduction}
+\label{sec:introduction}
+
+What will the world look like next month? Prediction markets---platforms where participants trade contracts on future events---offer a principled answer: well-calibrated probability estimates derived from the collective wisdom of informed traders~\citep{arrow2008promise}. Yet for most people, a statement like ``the market assigns a 23\% probability to event $X$'' is hard to internalize. Narrative descriptions of likely futures, by contrast, are immediately comprehensible. We ask: \emph{can we automatically convert prediction market probabilities into plausible, appropriately hedged news articles about the future?}
+
+This question sits at the intersection of two active research threads that have, until now, developed independently. On one hand, recent work has shown that large language models (LLMs) can approach human-level forecasting accuracy when provided with retrieval-augmented context~\citep{halawi2024approaching} or when aggregated into ``silicon crowds''~\citep{schoenegger2024wisdom}. On the other hand, temporal text generation methods can produce documents that reflect emerging trends~\citep{jain2024future}, and LLM-based news generation has advanced to the point where machine-written articles are increasingly difficult to distinguish from human-written ones~\citep{huertas2024news}. No prior work has connected these threads into an end-to-end system that consumes prediction market data and produces calibrated future narratives.
+
+\para{Our approach.} We build \futurenews, a three-stage pipeline that: (1)~fetches live prediction market questions from \metaculus and \polymarket, (2)~generates probability forecasts using \gptfour with market price anchoring, and (3)~produces news-style articles whose tone and hedging are conditioned on the forecasted probability. The key design insight is that prediction markets supply the calibrated probabilities that LLMs lack on their own, while LLMs supply the narrative generation capability that prediction markets lack.
+
+\para{Why market anchoring?} A critical precondition for generating well-calibrated future news is having well-calibrated probability estimates. Recent evaluations reveal that LLMs exhibit systematic overconfidence: on \kalshibench, models report 95\% confidence on predictions where they are wrong 15--62\% of the time~\citep{smith2025kalshibench}. We show that anchoring LLM forecasts to prediction market prices reduces Brier scores by 29.2\% (0.084~$\to$~0.060) on the \halawi benchmark, nearly matching the human crowd aggregate (0.058). Without anchoring, \gptfour performs at near-chance level (Brier 0.254) on \kalshibench questions, confirming that market data is essential rather than merely helpful.
+
+\para{Results preview.} Our evaluation spans three experiments. On forecasting accuracy, market-anchored \gptfour achieves a Brier score of 0.060, significantly better than unanchored forecasts ($p{=}0.041$). On article quality, generated articles score 4.28--5.00 out of 5.0 across five evaluation dimensions. On uncertainty handling, anchored articles score a perfect 5.00 versus 4.48 for unanchored articles ($p{<}0.001$, Cohen's $d{=}0.77$). A live prototype successfully generates compelling future news from real-time market data.
+
+We make the following contributions:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item We propose \futurenews, the first end-to-end pipeline that converts prediction market data into calibrated news-style articles about future events.
+    \item We demonstrate that market-anchored LLM forecasting achieves a 29.2\% Brier score improvement over unanchored forecasting, nearly matching human crowd performance.
+    \item We show that conditioning article generation on explicit probability levels yields significantly better uncertainty handling in the resulting narratives.
+    \item We release a working prototype that generates a ``newspaper from the future'' from live \metaculus and \polymarket data.
+\end{itemize}

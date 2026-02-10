@@ -1,0 +1,18 @@
+{
+  "n_articles": 20,
+  "n_evaluated": 20,
+  "mean_market_prob": 0.30827499999999997,
+  "mean_llm_prob": 0.242,
+  "mean_abs_diff": 0.08737500000000001,
+  "correlation": 0.9029308611695358,
+  "plausibility_mean": 5.0,
+  "plausibility_std": 0.0,
+  "coherence_mean": 5.0,
+  "coherence_std": 0.0,
+  "informativeness_mean": 4.9,
+  "informativeness_std": 0.3,
+  "uncertainty_handling_mean": 4.9,
+  "uncertainty_handling_std": 0.3,
+  "news_style_mean": 5.0,
+  "news_style_std": 0.0
+}
